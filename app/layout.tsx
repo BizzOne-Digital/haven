@@ -5,7 +5,7 @@ import Footer from "@/components/shared/Footer";
 import ClientWrapper from "@/components/ui/ClientWrapper";
 
 export const metadata: Metadata = {
-  title: { default:"APEX Tire & Wheel — Performance Redefined", template:"%s | APEX Tire & Wheel" },
+  title: { default:"Haven Tire & Wheel — Performance Redefined", template:"%s | Haven Tire & Wheel" },
   description: "Premium tires, expert wheel installation, and performance upgrades. Built for the road ahead.",
 };
 

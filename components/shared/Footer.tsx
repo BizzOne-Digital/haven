@@ -10,7 +10,7 @@ export default function Footer(){
     <footer style={{background:"#050505",borderTop:"1px solid rgba(255,255,255,0.05)"}}>
       <div style={{maxWidth:"1400px",margin:"0 auto",padding:"70px 60px 50px",display:"grid",gridTemplateColumns:"2fr 1fr 1fr 1fr",gap:"60px"}} className="footer-grid">
         <div>
-          <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"20px",fontWeight:900,letterSpacing:"4px",color:"#f0f0f0",marginBottom:"16px"}}>APEX<span style={{color:"#e8001d"}}>.</span></div>
+          <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"20px",fontWeight:900,letterSpacing:"4px",color:"#f0f0f0",marginBottom:"16px"}}>Haven<span style={{color:"#e8001d"}}>.</span></div>
           <p style={{fontSize:"13px",color:"rgba(240,240,240,0.3)",lineHeight:1.85,maxWidth:"270px",marginBottom:"26px"}}>Performance tire and wheel specialists. Precision fitment, premium brands, and unmatched service for drivers who demand the best.</p>
           <div style={{display:"flex",gap:"10px"}}>
             {["IG","FB","YT","X"].map(s=>(
@@ -38,7 +38,7 @@ export default function Footer(){
         ))}
       </div>
       <div style={{borderTop:"1px solid rgba(255,255,255,0.04)",padding:"20px 60px",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:"8px",maxWidth:"1400px",margin:"0 auto"}} className="footer-bottom">
-        <span style={{fontSize:"12px",color:"rgba(240,240,240,0.18)",letterSpacing:"2px"}}>2025 APEX Tire and Wheel. All rights reserved.</span>
+        <span style={{fontSize:"12px",color:"rgba(240,240,240,0.18)",letterSpacing:"2px"}}>2025 Haven Tire and Wheel. All rights reserved.</span>
         <span style={{fontSize:"12px",color:"rgba(240,240,240,0.18)",letterSpacing:"1px"}}>Performance. Precision. Passion.</span>
       </div>
       <style>{`@media(max-width:1000px){.footer-grid{grid-template-columns:1fr 1fr!important;gap:40px!important;padding:50px 40px 40px!important}}@media(max-width:600px){.footer-grid{grid-template-columns:1fr!important;padding:40px 24px!important}.footer-bottom{padding:16px 24px!important;flex-direction:column!important;text-align:center!important}}`}</style>

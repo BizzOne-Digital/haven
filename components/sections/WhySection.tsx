@@ -31,7 +31,7 @@ export default function WhySection(){
             </div>
           </div>
           <div className="reveal-right">
-            <span className="section-tag">Why APEX</span>
+            <span className="section-tag">Why Haven</span>
             <h2 className="section-title" style={{marginBottom:"16px"}}>PRECISION IS<br/>OUR STANDARD</h2>
             <p style={{fontSize:"15px",color:"rgba(240,240,240,0.45)",lineHeight:1.85,maxWidth:"400px",marginBottom:"36px"}}>Every vehicle that rolls into our shop leaves better than it arrived. Not a promise, a proven track record built over 8 years.</p>
             <div style={{display:"flex",flexDirection:"column",gap:"22px"}}>

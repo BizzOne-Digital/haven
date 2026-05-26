@@ -68,13 +68,13 @@ function TireSVG({ rotation }: { rotation: number }) {
       <circle cx="250" cy="250" r="30" fill="#141414" stroke="#2a2a2a" strokeWidth="1"/>
       <circle cx="250" cy="250" r="20" fill="#0a0a0a"/>
       <circle cx="250" cy="250" r="15" fill="#e8001d" opacity="0.88"/>
-      <text x="250" y="254" textAnchor="middle" fill="white" fontSize="7" fontFamily="'Orbitron',sans-serif" fontWeight="700">APEX</text>
+      <text x="250" y="254" textAnchor="middle" fill="white" fontSize="7" fontFamily="'Orbitron',sans-serif" fontWeight="700">Haven</text>
       <circle cx="250" cy="250" r="162" fill="url(#shine)"/>
       <circle cx="250" cy="250" r="196" fill="none" stroke="rgba(255,255,255,0.055)" strokeWidth="14" strokeDasharray="90 250" strokeLinecap="round" transform="rotate(-55,250,250)"/>
       <g transform={`rotate(${rotation*0.28},250,250)`} opacity="0.3">
         <path id="arc1" d="M 68,250 A 182,182 0 0,1 432,250" fill="none"/>
         <text fontSize="7.5" fontFamily="'Orbitron',sans-serif" fill="#555" letterSpacing="3.5">
-          <textPath href="#arc1">APEX PERFORMANCE  265/35 R20  ENGINEERED EXCELLENCE</textPath>
+          <textPath href="#arc1">Haven PERFORMANCE  265/35 R20  ENGINEERED EXCELLENCE</textPath>
         </text>
       </g>
       <ellipse cx="208" cy="178" rx="50" ry="30" fill="rgba(255,255,255,0.04)" transform="rotate(-28,208,178)"/>

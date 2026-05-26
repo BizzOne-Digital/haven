@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const reviews = [
   {
-    text: "APEX installed my Michelin Pilot Sport 5s on my M3 in under an hour. Perfect balance, zero vibration at highway speed. The team clearly knows performance vehicles inside out.",
+    text: "Haven installed my Michelin Pilot Sport 5s on my M3 in under an hour. Perfect balance, zero vibration at highway speed. The team clearly knows performance vehicles inside out.",
     name: "Marcus R.",
     car: "2023 BMW M3 Competition",
     init: "MR",

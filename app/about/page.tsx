@@ -2,7 +2,7 @@
 const UNSPLASH="https://images.unsplash.com";
 
 const milestones=[
-  {year:"2017",event:"APEX Tire and Wheel founded in a single 2-bay unit with two technicians."},
+  {year:"2017",event:"Haven Tire and Wheel founded in a single 2-bay unit with two technicians."},
   {year:"2018",event:"Achieved Michelin Authorized Dealer status after first year of exceptional sales volume."},
   {year:"2019",event:"Expanded to 8 bays and added ceramic coating and window tint services."},
   {year:"2021",event:"Reached 5,000 tire installations. Added Hunter HawkEye Elite alignment system."},
@@ -22,7 +22,7 @@ export default function AboutPage(){
             <span style={{width:"28px",height:"1px",background:"#e8001d",display:"block"}}/>Our Story
           </span>
           <h1 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(60px,8vw,100px)",lineHeight:.9,color:"#f0f0f0",letterSpacing:"2px",marginBottom:"28px"}}>BUILT ON<br/><span style={{color:"#e8001d"}}>PASSION</span><br/>AND PRECISION</h1>
-          <p style={{fontSize:"17px",color:"rgba(240,240,240,0.6)",lineHeight:1.9,maxWidth:"520px"}}>APEX was founded in 2017 with a single mission: to bring professional-grade tire and wheel service to enthusiast drivers who expect more than the average garage experience.</p>
+          <p style={{fontSize:"17px",color:"rgba(240,240,240,0.6)",lineHeight:1.9,maxWidth:"520px"}}>Haven was founded in 2017 with a single mission: to bring professional-grade tire and wheel service to enthusiast drivers who expect more than the average garage experience.</p>
         </div>
       </section>
 
@@ -35,9 +35,9 @@ export default function AboutPage(){
             </span>
             <h2 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(38px,4vw,58px)",color:"#f0f0f0",lineHeight:.95,marginBottom:"24px"}}>MORE THAN A TIRE SHOP</h2>
             <div style={{width:"60px",height:"2px",background:"#e8001d",marginBottom:"28px"}}/>
-            <p style={{fontSize:"15px",color:"rgba(240,240,240,0.55)",lineHeight:1.9,marginBottom:"20px"}}>We started APEX because we were frustrated. As car enthusiasts ourselves, we kept finding that tire shops treated every vehicle the same, whether it was a grocery-getter or a track-prepped supercar. We knew there had to be a better way.</p>
-            <p style={{fontSize:"15px",color:"rgba(240,240,240,0.55)",lineHeight:1.9,marginBottom:"20px"}}>Eight years later, APEX has installed over 10,000 tires, built a team of 15 certified technicians, and earned partner status with every major premium tire brand. We have worked on everything from daily commuters to multi-million-dollar exotics.</p>
-            <p style={{fontSize:"15px",color:"rgba(240,240,240,0.55)",lineHeight:1.9}}>Every vehicle gets the same obsessive attention to detail. That is the APEX standard, and we have never compromised it once.</p>
+            <p style={{fontSize:"15px",color:"rgba(240,240,240,0.55)",lineHeight:1.9,marginBottom:"20px"}}>We started Haven because we were frustrated. As car enthusiasts ourselves, we kept finding that tire shops treated every vehicle the same, whether it was a grocery-getter or a track-prepped supercar. We knew there had to be a better way.</p>
+            <p style={{fontSize:"15px",color:"rgba(240,240,240,0.55)",lineHeight:1.9,marginBottom:"20px"}}>Eight years later, Haven has installed over 10,000 tires, built a team of 15 certified technicians, and earned partner status with every major premium tire brand. We have worked on everything from daily commuters to multi-million-dollar exotics.</p>
+            <p style={{fontSize:"15px",color:"rgba(240,240,240,0.55)",lineHeight:1.9}}>Every vehicle gets the same obsessive attention to detail. That is the Haven standard, and we have never compromised it once.</p>
           </div>
           <div style={{position:"relative",overflow:"hidden",minHeight:"500px",background:"#111"}}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -54,7 +54,7 @@ export default function AboutPage(){
             <span style={{display:"inline-flex",alignItems:"center",gap:"10px",justifyContent:"center",fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"6px",color:"#e8001d",textTransform:"uppercase",marginBottom:"14px"}}>
               <span style={{width:"28px",height:"1px",background:"#e8001d",display:"block"}}/>Our History<span style={{width:"28px",height:"1px",background:"#e8001d",display:"block"}}/>
             </span>
-            <h2 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(38px,5vw,64px)",color:"#f0f0f0"}}>THE APEX JOURNEY</h2>
+            <h2 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(38px,5vw,64px)",color:"#f0f0f0"}}>THE Haven JOURNEY</h2>
           </div>
           <div style={{position:"relative",paddingLeft:"40px"}}>
             <div style={{position:"absolute",left:"8px",top:0,bottom:0,width:"2px",background:"linear-gradient(to bottom,#e8001d,rgba(232,0,29,0.1))"}}/>

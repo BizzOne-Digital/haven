@@ -86,9 +86,9 @@ export default function ContactPage(){
 
           {/* Sidebar info */}
           <div style={{display:"flex",flexDirection:"column",gap:"2px"}}>
-            {[{icon:<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e8001d" strokeWidth="1.5" strokeLinecap="round"><path d="M3 3h3l1.5 4-2 1.5a11 11 0 0 0 4 4L11 11l4 1.5V16a2 2 0 0 1-2 2C6.5 18 0 11.5 0 5a2 2 0 0 1 2-2z"/></svg>,label:"Phone",val:"(555) 240-APEX",sub:"Mon to Sat  8AM to 6PM"},
-              {icon:<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e8001d" strokeWidth="1.5" strokeLinecap="round"><path d="M2 4h16v12H2z"/><path d="M2 4 L10 11 L18 4"/></svg>,label:"Email",val:"hello@apextire.ca",sub:"Reply within 24 hours"},
-              {icon:<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e8001d" strokeWidth="1.5" strokeLinecap="round"><circle cx="10" cy="8" r="4"/><path d="M4 18 Q4 13 10 13 Q16 13 16 18"/></svg>,label:"Location",val:"123 Performance Drive",sub:"Unit 4 Industrial Park"},
+            {[{icon:<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e8001d" strokeWidth="1.5" strokeLinecap="round"><path d="M3 3h3l1.5 4-2 1.5a11 11 0 0 0 4 4L11 11l4 1.5V16a2 2 0 0 1-2 2C6.5 18 0 11.5 0 5a2 2 0 0 1 2-2z"/></svg>,label:"Phone",val:"(905) 803 0000",sub:"Mon to Sat  8AM to 6PM"},
+              {icon:<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e8001d" strokeWidth="1.5" strokeLinecap="round"><path d="M2 4h16v12H2z"/><path d="M2 4 L10 11 L18 4"/></svg>,label:"Email",val:"haventinttire@gmail.com",sub:"Reply within 24 hours"},
+              {icon:<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e8001d" strokeWidth="1.5" strokeLinecap="round"><circle cx="10" cy="8" r="4"/><path d="M4 18 Q4 13 10 13 Q16 13 16 18"/></svg>,label:"Location",val:"Mississauga",sub:"Unit 4 Industrial Park"},
               {icon:<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e8001d" strokeWidth="1.5" strokeLinecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 5 L10 10 L14 12"/></svg>,label:"Hours",val:"Mon to Sat  8AM to 6PM",sub:"Closed Sundays and Holidays"},
             ].map(i=>(
               <div key={i.label} style={{background:"#0d0d0d",border:"1px solid rgba(255,255,255,0.07)",padding:"28px",display:"flex",gap:"16px",alignItems:"flex-start"}}>
