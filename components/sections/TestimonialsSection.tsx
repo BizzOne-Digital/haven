@@ -163,7 +163,7 @@ export default function TestimonialsSection() {
         }
 
         .review-text{
-          color:rgba(240,240,240,.72);
+          color:rgba(240,240,240,0.95);
           line-height:1.9;
           margin-bottom:26px;
           font-size:14px;

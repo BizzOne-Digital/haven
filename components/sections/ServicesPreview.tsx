@@ -16,9 +16,9 @@ export default function ServicesPreview(){
           <div>
             <span className="section-tag reveal">What We Do</span>
             <h2 className="section-title reveal">OUR SERVICES</h2>
-            <p className="reveal" style={{fontSize:"15px",color:"rgba(240,240,240,0.45)",maxWidth:"420px",lineHeight:1.8,marginTop:"12px"}}>From precision installation to full performance upgrades, every detail handled with expert care.</p>
+            <p className="reveal" style={{fontSize:"17px",color:"rgba(240,240,240,0.82)",maxWidth:"420px",lineHeight:1.8,marginTop:"12px"}}>From precision installation to full performance upgrades, every detail handled with expert care.</p>
           </div>
-          <Link href="/services" className="clip-btn reveal" data-hover style={{background:"transparent",color:"#e8001d",border:"1px solid #e8001d",padding:"12px 28px",fontFamily:"'Rajdhani',sans-serif",fontSize:"12px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",textDecoration:"none",whiteSpace:"nowrap",transition:"all .3s"}}
+          <Link href="/services" className="clip-btn reveal" data-hover style={{background:"transparent",color:"#e8001d",border:"1px solid #e8001d",padding:"12px 28px",fontFamily:"'Rajdhani',sans-serif",fontSize:"14px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",textDecoration:"none",whiteSpace:"nowrap",transition:"all .3s"}}
           onMouseEnter={e=>{e.currentTarget.style.background="#e8001d";e.currentTarget.style.color="white"}}
           onMouseLeave={e=>{e.currentTarget.style.background="transparent";e.currentTarget.style.color="#e8001d"}}>View All Services</Link>
         </div>
@@ -28,10 +28,10 @@ export default function ServicesPreview(){
             onMouseEnter={e=>{e.currentTarget.style.background="rgba(255,255,255,0.07)";e.currentTarget.style.transform="translateY(-4px)";e.currentTarget.style.borderColor="rgba(232,0,29,0.25)"}}
             onMouseLeave={e=>{e.currentTarget.style.background="rgba(255,255,255,0.04)";e.currentTarget.style.transform="translateY(0)";e.currentTarget.style.borderColor="rgba(255,255,255,0.08)"}}>
               <div style={{position:"absolute",top:0,left:0,right:0,height:"2px",background:"#e8001d",transform:"scaleX(0)",transformOrigin:"left",transition:"transform .4s"}} className="svc-line"/>
-              <span style={{position:"absolute",top:"18px",right:"20px",fontFamily:"'Orbitron',sans-serif",fontSize:"10px",color:"rgba(232,0,29,0.3)",letterSpacing:"2px"}}>{s.num}</span>
+              <span style={{position:"absolute",top:"18px",right:"20px",fontFamily:"'Orbitron',sans-serif",fontSize:"13px",color:"rgba(232,0,29,0.3)",letterSpacing:"2px"}}>{s.num}</span>
               <div style={{width:"44px",height:"44px",marginBottom:"20px"}}>{s.icon}</div>
-              <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"12px",fontWeight:700,letterSpacing:"2px",color:"#f0f0f0",marginBottom:"10px",textTransform:"uppercase"}}>{s.title}</div>
-              <p style={{fontSize:"13px",color:"rgba(240,240,240,0.42)",lineHeight:1.75}}>{s.desc}</p>
+              <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"14px",fontWeight:700,letterSpacing:"2px",color:"#f0f0f0",marginBottom:"10px",textTransform:"uppercase"}}>{s.title}</div>
+              <p style={{fontSize:"15px",color:"rgba(240,240,240,0.82)",lineHeight:1.75}}>{s.desc}</p>
             </div>
           ))}
         </div>

@@ -22,13 +22,13 @@ export default function BrandsPage(){
       <section style={{padding:"80px 60px",borderBottom:"1px solid rgba(255,255,255,0.05)",position:"relative",overflow:"hidden"}}>
         <div style={{position:"absolute",inset:0,backgroundImage:"linear-gradient(rgba(232,0,29,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(232,0,29,0.025) 1px,transparent 1px)",backgroundSize:"64px 64px"}}/>
         <div style={{maxWidth:"1400px",margin:"0 auto",position:"relative"}}>
-          <span style={{display:"inline-flex",alignItems:"center",gap:"10px",fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"6px",color:"#e8001d",textTransform:"uppercase",marginBottom:"20px"}}>
+          <span style={{display:"inline-flex",alignItems:"center",gap:"10px",fontFamily:"'Orbitron',sans-serif",fontSize:"13px",letterSpacing:"6px",color:"#e8001d",textTransform:"uppercase",marginBottom:"20px"}}>
             <span style={{width:"28px",height:"1px",background:"#e8001d",display:"block"}}/>Our Partners
           </span>
           <h1 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(60px,8vw,110px)",lineHeight:.9,color:"#f0f0f0",letterSpacing:"2px",marginBottom:"24px"}}>
             PREMIUM<br/><span style={{color:"#e8001d"}}>BRANDS</span>
           </h1>
-          <p style={{fontSize:"16px",color:"rgba(240,240,240,0.5)",letterSpacing:"1.5px",maxWidth:"500px",lineHeight:1.85}}>
+          <p style={{fontSize:"18px",color:"rgba(240,240,240,0.88)",letterSpacing:"1.5px",maxWidth:"500px",lineHeight:1.85}}>
             We partner exclusively with the world's top tire manufacturers. Every brand earns its place through proven performance, safety, and reliability.
           </p>
         </div>
@@ -40,12 +40,12 @@ export default function BrandsPage(){
         <div style={{display:"flex",gap:"2px",marginBottom:"60px",flexWrap:"wrap"}} className="brand-tabs">
           {brands.map((br,i)=>(
             <button key={br.name} onClick={()=>setActive(i)} data-hover style={{
-              padding:"14px 28px",fontFamily:"'Orbitron',sans-serif",fontSize:"11px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",border:"none",cursor:"pointer",transition:"all .3s",
+              padding:"14px 28px",fontFamily:"'Orbitron',sans-serif",fontSize:"14px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",border:"none",cursor:"pointer",transition:"all .3s",
               background:i===active?"#e8001d":"rgba(255,255,255,0.04)",
-              color:i===active?"white":"rgba(240,240,240,0.5)",
+              color:i===active?"white":"rgba(240,240,240,0.88)",
             }}
             onMouseEnter={e=>{if(i!==active){e.currentTarget.style.background="rgba(255,255,255,0.08)";e.currentTarget.style.color="#f0f0f0"}}}
-            onMouseLeave={e=>{if(i!==active){e.currentTarget.style.background="rgba(255,255,255,0.04)";e.currentTarget.style.color="rgba(240,240,240,0.5)"}}}
+            onMouseLeave={e=>{if(i!==active){e.currentTarget.style.background="rgba(255,255,255,0.04)";e.currentTarget.style.color="rgba(240,240,240,0.88)"}}}
             >{br.name}</button>
           ))}
         </div>
@@ -60,34 +60,34 @@ export default function BrandsPage(){
             <div className="img-overlay"/>
             <div style={{position:"absolute",bottom:"36px",left:"36px"}}>
               <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"64px",color:"#f0f0f0",lineHeight:.9,letterSpacing:"2px"}}>{b.name}</div>
-              <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"11px",color:b.color,letterSpacing:"3px",marginTop:"6px"}}>{b.tagline}</div>
+              <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"14px",color:b.color,letterSpacing:"3px",marginTop:"6px"}}>{b.tagline}</div>
             </div>
-            <div style={{position:"absolute",top:"28px",right:"28px",background:"rgba(232,0,29,0.15)",border:"1px solid rgba(232,0,29,0.4)",padding:"6px 16px",fontFamily:"'Orbitron',sans-serif",fontSize:"9px",letterSpacing:"3px",color:"#e8001d"}}>{b.tier}</div>
+            <div style={{position:"absolute",top:"28px",right:"28px",background:"rgba(232,0,29,0.15)",border:"1px solid rgba(232,0,29,0.4)",padding:"6px 16px",fontFamily:"'Orbitron',sans-serif",fontSize:"12px",letterSpacing:"3px",color:"#e8001d"}}>{b.tier}</div>
           </div>
 
           {/* Content */}
           <div style={{background:"#0d0d0d",padding:"60px",display:"flex",flexDirection:"column",justifyContent:"center"}}>
             <div style={{display:"flex",gap:"36px",marginBottom:"32px"}}>
               <div style={{borderLeft:"2px solid #e8001d",paddingLeft:"12px"}}>
-                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"9px",color:"rgba(240,240,240,0.3)",letterSpacing:"3px",textTransform:"uppercase",marginBottom:"4px"}}>Founded</div>
-                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"18px",color:"#f0f0f0"}}>{b.since}</div>
+                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"12px",color:"rgba(240,240,240,0.72)",letterSpacing:"3px",textTransform:"uppercase",marginBottom:"4px"}}>Founded</div>
+                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"20px",color:"#f0f0f0"}}>{b.since}</div>
               </div>
               <div style={{borderLeft:"2px solid #e8001d",paddingLeft:"12px"}}>
-                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"9px",color:"rgba(240,240,240,0.3)",letterSpacing:"3px",textTransform:"uppercase",marginBottom:"4px"}}>Origin</div>
-                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"18px",color:"#f0f0f0"}}>{b.country}</div>
+                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"12px",color:"rgba(240,240,240,0.72)",letterSpacing:"3px",textTransform:"uppercase",marginBottom:"4px"}}>Origin</div>
+                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"20px",color:"#f0f0f0"}}>{b.country}</div>
               </div>
             </div>
             <div style={{width:"60px",height:"2px",background:"#e8001d",marginBottom:"24px"}}/>
-            <p style={{fontSize:"14px",color:"rgba(240,240,240,0.58)",lineHeight:1.85,marginBottom:"32px"}}>{b.desc}</p>
-            <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"4px",color:"#e8001d",marginBottom:"14px",textTransform:"uppercase"}}>Lines We Stock</div>
+            <p style={{fontSize:"16px",color:"rgba(240,240,240,0.88)",lineHeight:1.85,marginBottom:"32px"}}>{b.desc}</p>
+            <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"13px",letterSpacing:"4px",color:"#e8001d",marginBottom:"14px",textTransform:"uppercase"}}>Lines We Stock</div>
             <div style={{display:"flex",flexWrap:"wrap",gap:"8px",marginBottom:"28px"}}>
               {b.lines.map(l=>(
-                <span key={l} style={{background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.1)",padding:"6px 14px",fontSize:"12px",color:"rgba(240,240,240,0.6)",letterSpacing:"1px"}}>{l}</span>
+                <span key={l} style={{background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.1)",padding:"6px 14px",fontSize:"14px",color:"rgba(240,240,240,0.88)",letterSpacing:"1px"}}>{l}</span>
               ))}
             </div>
             <div style={{background:"rgba(232,0,29,0.08)",border:"1px solid rgba(232,0,29,0.2)",padding:"14px 20px",display:"flex",gap:"10px",alignItems:"center"}}>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#e8001d" strokeWidth="1.5"><circle cx="7" cy="7" r="6"/><path d="M7 4 L7 7 L10 8"/></svg>
-              <span style={{fontSize:"12px",color:"rgba(240,240,240,0.55)",letterSpacing:"1px"}}><span style={{color:"#e8001d"}}>Best For:</span> {b.best}</span>
+              <span style={{fontSize:"14px",color:"rgba(240,240,240,0.88)",letterSpacing:"1px"}}><span style={{color:"#e8001d"}}>Best For:</span> {b.best}</span>
             </div>
           </div>
         </div>
@@ -103,8 +103,8 @@ export default function BrandsPage(){
               onMouseEnter={e=>{e.currentTarget.style.background="rgba(255,255,255,0.07)";e.currentTarget.style.borderColor="rgba(232,0,29,0.3)"}}
               onMouseLeave={e=>{e.currentTarget.style.background="rgba(255,255,255,0.03)";e.currentTarget.style.borderColor="rgba(255,255,255,0.06)"}}>
                 <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"32px",color:"#f0f0f0",letterSpacing:"2px",marginBottom:"6px"}}>{br.name}</div>
-                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"9px",letterSpacing:"3px",color:br.color,textTransform:"uppercase",marginBottom:"14px"}}>{br.tier}</div>
-                <p style={{fontSize:"12px",color:"rgba(240,240,240,0.4)",lineHeight:1.7}}>{br.desc.substring(0,100)}...</p>
+                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"12px",letterSpacing:"3px",color:br.color,textTransform:"uppercase",marginBottom:"14px"}}>{br.tier}</div>
+                <p style={{fontSize:"14px",color:"rgba(240,240,240,0.82)",lineHeight:1.7}}>{br.desc.substring(0,100)}...</p>
               </button>
             ))}
           </div>

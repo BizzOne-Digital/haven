@@ -14,7 +14,7 @@ function Stat({t,s,l}:{t:number,s:string,l:string}){
     <div ref={ref} className="glass-card" style={{padding:"36px 28px",textAlign:"center",position:"relative",overflow:"hidden"}}>
       <div style={{position:"absolute",bottom:0,left:0,right:0,height:"2px",background:"linear-gradient(90deg,transparent,#e8001d,transparent)"}}/>
       <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"clamp(32px,4vw,48px)",fontWeight:900,color:"#e8001d",textShadow:"0 0 20px rgba(232,0,29,0.4)",marginBottom:"8px",lineHeight:1}}>{val}</div>
-      <div style={{fontSize:"11px",letterSpacing:"3px",color:"rgba(240,240,240,0.38)",textTransform:"uppercase"}}>{l}</div>
+      <div style={{fontSize:"14px",letterSpacing:"3px",color:"rgba(240,240,240,0.82)",textTransform:"uppercase"}}>{l}</div>
     </div>
   );
 }
@@ -33,7 +33,7 @@ export default function WhySection(){
           <div className="reveal-right">
             <span className="section-tag">Why Haven</span>
             <h2 className="section-title" style={{marginBottom:"16px"}}>PRECISION IS<br/>OUR STANDARD</h2>
-            <p style={{fontSize:"15px",color:"rgba(240,240,240,0.45)",lineHeight:1.85,maxWidth:"400px",marginBottom:"36px"}}>Every vehicle that rolls into our shop leaves better than it arrived. Not a promise, a proven track record built over 8 years.</p>
+            <p style={{fontSize:"17px",color:"rgba(240,240,240,0.82)",lineHeight:1.85,maxWidth:"400px",marginBottom:"36px"}}>Every vehicle that rolls into our shop leaves better than it arrived. Not a promise, a proven track record built over 8 years.</p>
             <div style={{display:"flex",flexDirection:"column",gap:"22px"}}>
               {pts.map(p=>(
                 <div key={p.title} style={{display:"flex",gap:"16px",alignItems:"flex-start"}}>
@@ -41,8 +41,8 @@ export default function WhySection(){
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#e8001d" strokeWidth="1.8" strokeLinecap="round"><path d="M2 7 L5.5 11 L12 3"/></svg>
                   </div>
                   <div>
-                    <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"11px",fontWeight:700,letterSpacing:"2px",color:"#f0f0f0",marginBottom:"4px",textTransform:"uppercase"}}>{p.title}</div>
-                    <p style={{fontSize:"13px",color:"rgba(240,240,240,0.42)",lineHeight:1.75}}>{p.desc}</p>
+                    <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"14px",fontWeight:700,letterSpacing:"2px",color:"#f0f0f0",marginBottom:"4px",textTransform:"uppercase"}}>{p.title}</div>
+                    <p style={{fontSize:"15px",color:"rgba(240,240,240,0.82)",lineHeight:1.75}}>{p.desc}</p>
                   </div>
                 </div>
               ))}

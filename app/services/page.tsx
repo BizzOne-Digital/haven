@@ -20,13 +20,13 @@ export default function ServicesPage(){
         <div style={{position:"absolute",inset:0,backgroundImage:"linear-gradient(rgba(232,0,29,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(232,0,29,0.025) 1px,transparent 1px)",backgroundSize:"64px 64px"}}/>
         <div style={{position:"absolute",right:"-10%",top:"50%",transform:"translateY(-50%)",width:"600px",height:"600px",background:"radial-gradient(circle,rgba(232,0,29,0.08) 0%,transparent 70%)",pointerEvents:"none"}}/>
         <div style={{position:"relative",maxWidth:"1400px",margin:"0 auto"}}>
-          <span style={{display:"inline-flex",alignItems:"center",gap:"10px",fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"6px",color:"#e8001d",textTransform:"uppercase",marginBottom:"20px"}}>
+          <span style={{display:"inline-flex",alignItems:"center",gap:"10px",fontFamily:"'Orbitron',sans-serif",fontSize:"13px",letterSpacing:"6px",color:"#e8001d",textTransform:"uppercase",marginBottom:"20px"}}>
             <span style={{width:"28px",height:"1px",background:"#e8001d",display:"block"}}/>What We Do
           </span>
           <h1 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(60px,8vw,110px)",lineHeight:.9,color:"#f0f0f0",letterSpacing:"2px",marginBottom:"24px"}}>
             OUR<br/><span style={{color:"#e8001d"}}>SERVICES</span>
           </h1>
-          <p style={{fontSize:"16px",color:"rgba(240,240,240,0.5)",letterSpacing:"1.5px",maxWidth:"500px",lineHeight:1.85}}>
+          <p style={{fontSize:"18px",color:"rgba(240,240,240,0.88)",letterSpacing:"1.5px",maxWidth:"500px",lineHeight:1.85}}>
             Eight premium services. One obsession: making sure every vehicle that leaves our shop is better than when it arrived.
           </p>
         </div>
@@ -47,13 +47,13 @@ export default function ServicesPage(){
             </div>
             {/* Content */}
             <div style={{order:idx%2===0?2:1,background:"#0d0d0d",padding:"60px",display:"flex",flexDirection:"column",justifyContent:"center"}} className="svc-content">
-              <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"5px",color:"#e8001d",textTransform:"uppercase",marginBottom:"12px"}}>{s.sub}</span>
+              <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"13px",letterSpacing:"5px",color:"#e8001d",textTransform:"uppercase",marginBottom:"12px"}}>{s.sub}</span>
               <h2 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(36px,3.5vw,52px)",color:"#f0f0f0",marginBottom:"20px",lineHeight:.95}}>{s.title}</h2>
               <div style={{width:"60px",height:"2px",background:"#e8001d",marginBottom:"24px"}}/>
-              <p style={{fontSize:"14px",color:"rgba(240,240,240,0.55)",lineHeight:1.85,marginBottom:"28px"}}>{s.desc}</p>
+              <p style={{fontSize:"16px",color:"rgba(240,240,240,0.88)",lineHeight:1.85,marginBottom:"28px"}}>{s.desc}</p>
               <ul style={{listStyle:"none",display:"flex",flexDirection:"column",gap:"10px"}}>
                 {s.features.map(f=>(
-                  <li key={f} style={{display:"flex",alignItems:"center",gap:"10px",fontSize:"13px",color:"rgba(240,240,240,0.55)"}}>
+                  <li key={f} style={{display:"flex",alignItems:"center",gap:"10px",fontSize:"15px",color:"rgba(240,240,240,0.88)"}}>
                     <span style={{width:"20px",height:"20px",border:"1px solid #e8001d",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
                       <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#e8001d" strokeWidth="1.5"><path d="M2 5 L4 7 L8 3"/></svg>
                     </span>

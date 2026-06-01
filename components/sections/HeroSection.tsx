@@ -110,28 +110,28 @@ export default function HeroSection() {
       <div style={{flex:"0 0 auto",width:"clamp(300px,48%,560px)",display:"flex",flexDirection:"column",justifyContent:"center",padding:"120px 60px 80px",position:"relative",zIndex:5}} className="hero-left">
         <div style={{display:"flex",alignItems:"center",gap:"12px",marginBottom:"20px",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease .2s"}}>
           <div style={{width:"32px",height:"1px",background:"#e8001d"}}/>
-          <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"6px",color:"#e8001d",textTransform:"uppercase"}}>Performance Tire and Wheel</span>
+          <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"13px",letterSpacing:"6px",color:"#e8001d",textTransform:"uppercase"}}>Performance Tire and Wheel</span>
         </div>
         <h1 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(58px,7.8vw,108px)",lineHeight:.9,letterSpacing:"2px",color:"#f0f0f0",marginBottom:"22px",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(30px)",transition:"all .9s ease .4s"}}>
           BUILT FOR<br/><span style={{color:"#e8001d",textShadow:"0 0 60px rgba(232,0,29,0.5)"}}>THE ROAD</span><br/>AHEAD
         </h1>
         <div style={{height:"2px",background:"linear-gradient(to right,#e8001d,transparent)",marginBottom:"22px",width:mounted?"120px":"0px",transition:"width 1.1s ease .7s"}}/>
-        <p style={{fontSize:"15px",fontWeight:300,letterSpacing:"1.5px",color:"rgba(240,240,240,0.48)",lineHeight:1.9,marginBottom:"44px",maxWidth:"360px",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease .6s"}}>
+        <p style={{fontSize:"17px",fontWeight:300,letterSpacing:"1.5px",color:"rgba(240,240,240,0.82)",lineHeight:1.9,marginBottom:"44px",maxWidth:"360px",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease .6s"}}>
           Premium tires. Expert installation.<br/>Maximum road performance, every time.
         </p>
         <div style={{display:"flex",gap:"14px",flexWrap:"wrap",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease .8s"}}>
-          <Link href="/contact" className="clip-btn" data-hover style={{background:"#e8001d",color:"white",padding:"15px 38px",fontFamily:"'Rajdhani',sans-serif",fontSize:"13px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",textDecoration:"none",display:"inline-block",transition:"all .3s"}}
+          <Link href="/contact" className="clip-btn" data-hover style={{background:"#e8001d",color:"white",padding:"15px 38px",fontFamily:"'Rajdhani',sans-serif",fontSize:"15px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",textDecoration:"none",display:"inline-block",transition:"all .3s"}}
           onMouseEnter={e=>{e.currentTarget.style.background="#ff0025";e.currentTarget.style.boxShadow="0 0 40px rgba(232,0,29,0.7)";e.currentTarget.style.transform="translateY(-3px)"}}
           onMouseLeave={e=>{e.currentTarget.style.background="#e8001d";e.currentTarget.style.boxShadow="none";e.currentTarget.style.transform="translateY(0)"}}>Book Tire Service</Link>
-          <Link href="/services" className="clip-btn" data-hover style={{background:"transparent",color:"#f0f0f0",padding:"15px 38px",border:"1px solid rgba(240,240,240,0.22)",fontFamily:"'Rajdhani',sans-serif",fontSize:"13px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",textDecoration:"none",display:"inline-block",transition:"all .3s"}}
+          <Link href="/services" className="clip-btn" data-hover style={{background:"transparent",color:"#f0f0f0",padding:"15px 38px",border:"1px solid rgba(240,240,240,0.72)",fontFamily:"'Rajdhani',sans-serif",fontSize:"15px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",textDecoration:"none",display:"inline-block",transition:"all .3s"}}
           onMouseEnter={e=>{e.currentTarget.style.borderColor="#e8001d";e.currentTarget.style.color="#e8001d";e.currentTarget.style.transform="translateY(-3px)"}}
-          onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(240,240,240,0.22)";e.currentTarget.style.color="#f0f0f0";e.currentTarget.style.transform="translateY(0)"}}>Explore Services</Link>
+          onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(240,240,240,0.72)";e.currentTarget.style.color="#f0f0f0";e.currentTarget.style.transform="translateY(0)"}}>Explore Services</Link>
         </div>
         <div style={{display:"flex",gap:"36px",marginTop:"56px",flexWrap:"wrap",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease 1s"}}>
           {[{num:"10K+",label:"Tires Installed"},{num:"5 Star",label:"Rated Service"},{num:"8 Years",label:"Experience"},{num:"15+",label:"Certified Techs"}].map(s=>(
             <div key={s.label} style={{borderLeft:"2px solid #e8001d",paddingLeft:"14px"}}>
-              <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"19px",fontWeight:700,color:"#f0f0f0"}}>{s.num}</div>
-              <div style={{fontSize:"10px",letterSpacing:"3px",color:"rgba(240,240,240,0.32)",textTransform:"uppercase"}}>{s.label}</div>
+              <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"21px",fontWeight:700,color:"#f0f0f0"}}>{s.num}</div>
+              <div style={{fontSize:"13px",letterSpacing:"3px",color:"rgba(240,240,240,0.72)",textTransform:"uppercase"}}>{s.label}</div>
             </div>
           ))}
         </div>
@@ -152,7 +152,7 @@ export default function HeroSection() {
 
       <div style={{position:"absolute",bottom:"32px",left:"60px",zIndex:10,display:"flex",alignItems:"center",gap:"10px",opacity:mounted?1:0,transition:"opacity .8s ease 1.4s"}}>
         <div style={{width:"36px",height:"1px",background:"#e8001d",animation:"glowPulse 2s ease-in-out infinite"}}/>
-        <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"9px",letterSpacing:"4px",color:"rgba(240,240,240,0.3)",textTransform:"uppercase"}}>Scroll</span>
+        <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"12px",letterSpacing:"4px",color:"rgba(240,240,240,0.72)",textTransform:"uppercase"}}>Scroll</span>
       </div>
       <div style={{position:"absolute",bottom:0,left:0,right:0,height:"160px",background:"linear-gradient(to bottom,transparent,#080808)",pointerEvents:"none",zIndex:6}}/>
       <style>{`@media(max-width:768px){.hero-left{width:100%!important;padding:100px 24px 40px!important}section#hero{flex-direction:column!important}.hero-right{min-height:380px!important}}`}</style>

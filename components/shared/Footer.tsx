@@ -43,7 +43,7 @@ export default function Footer() {
           <div
             style={{
               fontFamily: "'Orbitron',sans-serif",
-              fontSize: "20px",
+              fontSize: "22px",
               fontWeight: 900,
               letterSpacing: "4px",
               color: "#f0f0f0",
@@ -55,8 +55,8 @@ export default function Footer() {
 
           <p
             style={{
-              fontSize: "13px",
-              color: "rgba(240,240,240,0.3)",
+              fontSize: "15px",
+              color: "rgba(240,240,240,0.72)",
               lineHeight: 1.85,
               maxWidth: "270px",
               marginBottom: "26px",
@@ -81,9 +81,9 @@ export default function Footer() {
                   alignItems: "center",
                   justifyContent: "center",
                   fontFamily: "'Orbitron',sans-serif",
-                  fontSize: "9px",
+                  fontSize: "12px",
                   fontWeight: 700,
-                  color: "rgba(240,240,240,0.35)",
+                  color: "rgba(240,240,240,0.72)",
                   textDecoration: "none",
                   transition: "all .3s",
                 }}
@@ -97,7 +97,7 @@ export default function Footer() {
                   e.currentTarget.style.borderColor =
                     "rgba(255,255,255,0.1)";
                   e.currentTarget.style.color =
-                    "rgba(240,240,240,0.35)";
+                    "rgba(240,240,240,0.72)";
                   e.currentTarget.style.background = "transparent";
                 }}
               >
@@ -115,7 +115,7 @@ export default function Footer() {
             <div
               style={{
                 fontFamily: "'Orbitron',sans-serif",
-                fontSize: "10px",
+                fontSize: "13px",
                 letterSpacing: "4px",
                 color: "#f0f0f0",
                 marginBottom: "20px",
@@ -139,8 +139,8 @@ export default function Footer() {
                     href={item.h}
                     data-hover
                     style={{
-                      fontSize: "13px",
-                      color: "rgba(240,240,240,0.3)",
+                      fontSize: "15px",
+                      color: "rgba(240,240,240,0.72)",
                       textDecoration: "none",
                       letterSpacing: "0.5px",
                       transition: "color .3s",
@@ -150,7 +150,7 @@ export default function Footer() {
                     }
                     onMouseLeave={(e) =>
                       (e.currentTarget.style.color =
-                        "rgba(240,240,240,0.3)")
+                        "rgba(240,240,240,0.72)")
                     }
                   >
                     {item.l}
@@ -178,8 +178,8 @@ export default function Footer() {
       >
         <span
           style={{
-            fontSize: "12px",
-            color: "rgba(240,240,240,0.18)",
+            fontSize: "14px",
+            color: "rgba(240,240,240,0.55)",
             letterSpacing: "2px",
           }}
         >
@@ -188,8 +188,8 @@ export default function Footer() {
 
         <span
           style={{
-            fontSize: "12px",
-            color: "rgba(240,240,240,0.18)",
+            fontSize: "14px",
+            color: "rgba(240,240,240,0.55)",
             letterSpacing: "1px",
           }}
         >

@@ -41,7 +41,7 @@ body{background:#080808;color:#f0f0f0;font-family:'Rajdhani',sans-serif;overflow
 .clip-btn{clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%)}
 .glass-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 
-.section-tag{display:inline-flex;align-items:center;gap:10px;font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:6px;color:#e8001d;text-transform:uppercase;margin-bottom:14px}
+.section-tag{display:inline-flex;align-items:center;gap:10px;font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:6px;color:#e8001d;text-transform:uppercase;margin-bottom:14px}
 .section-tag::before{content:'';display:block;width:28px;height:1px;background:#e8001d}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,72px);line-height:0.95;color:#f0f0f0;letter-spacing:1px}
 

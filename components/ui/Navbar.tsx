@@ -63,15 +63,15 @@ export default function Navbar() {
           {links.map(l => (
             <li key={l.href}>
               <Link href={l.href} data-hover style={{
-                color: pathname===l.href ? "#e8001d" : "rgba(240,240,240,0.6)",
-                textDecoration:"none",fontSize:"11px",fontWeight:600,
+                color: pathname===l.href ? "#e8001d" : "rgba(240,240,240,0.88)",
+                textDecoration:"none",fontSize:"14px",fontWeight:600,
                 letterSpacing:"3px",textTransform:"uppercase",
                 fontFamily:"'Rajdhani',sans-serif",transition:"color .3s",
                 borderBottom: pathname===l.href ? "1px solid #e8001d" : "1px solid transparent",
                 paddingBottom:"2px",
               }}
               onMouseEnter={e=>(e.currentTarget.style.color="#e8001d")}
-              onMouseLeave={e=>(e.currentTarget.style.color=pathname===l.href?"#e8001d":"rgba(240,240,240,0.6)")}
+              onMouseLeave={e=>(e.currentTarget.style.color=pathname===l.href?"#e8001d":"rgba(240,240,240,0.88)")}
               >{l.label}</Link>
             </li>
           ))}
@@ -80,7 +80,7 @@ export default function Navbar() {
         {/* Book Now button */}
         <Link href="/contact" className="clip-btn" data-hover style={{
           background:"#e8001d",color:"white",padding:"10px 26px",
-          fontFamily:"'Rajdhani',sans-serif",fontSize:"12px",fontWeight:700,
+          fontFamily:"'Rajdhani',sans-serif",fontSize:"14px",fontWeight:700,
           letterSpacing:"3px",textTransform:"uppercase",textDecoration:"none",
           display:"inline-block",transition:"all .3s",
         }}
@@ -124,7 +124,7 @@ export default function Navbar() {
             right:"24px",
             background:"none",
             border:"none",
-            color:"rgba(240,240,240,0.6)",
+            color:"rgba(240,240,240,0.88)",
             fontSize:"26px",
             cursor:"pointer",
             fontFamily:"monospace"

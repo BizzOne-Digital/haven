@@ -30,13 +30,13 @@ export default function GalleryPage(){
       <section style={{padding:"80px 60px",borderBottom:"1px solid rgba(255,255,255,0.05)",position:"relative",overflow:"hidden"}}>
         <div style={{position:"absolute",inset:0,backgroundImage:"linear-gradient(rgba(232,0,29,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(232,0,29,0.025) 1px,transparent 1px)",backgroundSize:"64px 64px"}}/>
         <div style={{maxWidth:"1400px",margin:"0 auto",position:"relative"}}>
-          <span style={{display:"inline-flex",alignItems:"center",gap:"10px",fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"6px",color:"#e8001d",textTransform:"uppercase",marginBottom:"20px"}}>
+          <span style={{display:"inline-flex",alignItems:"center",gap:"10px",fontFamily:"'Orbitron',sans-serif",fontSize:"13px",letterSpacing:"6px",color:"#e8001d",textTransform:"uppercase",marginBottom:"20px"}}>
             <span style={{width:"28px",height:"1px",background:"#e8001d",display:"block"}}/>Our Work
           </span>
           <h1 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(60px,8vw,110px)",lineHeight:.9,color:"#f0f0f0",letterSpacing:"2px",marginBottom:"24px"}}>
             THE<br/><span style={{color:"#e8001d"}}>SHOWCASE</span>
           </h1>
-          <p style={{fontSize:"16px",color:"rgba(240,240,240,0.5)",letterSpacing:"1.5px",maxWidth:"500px",lineHeight:1.85}}>
+          <p style={{fontSize:"18px",color:"rgba(240,240,240,0.88)",letterSpacing:"1.5px",maxWidth:"500px",lineHeight:1.85}}>
             Real builds. Real results. Every image in this gallery represents an actual vehicle that rolled through our doors.
           </p>
         </div>
@@ -45,11 +45,11 @@ export default function GalleryPage(){
       {/* Filter tabs */}
       <div style={{padding:"40px 60px 0",maxWidth:"1400px",margin:"0 auto",display:"flex",gap:"2px",flexWrap:"wrap"}} className="gallery-filters">
         {CATS.map(c=>(
-          <button key={c} onClick={()=>setCat(c)} data-hover style={{padding:"12px 28px",fontFamily:"'Orbitron',sans-serif",fontSize:"11px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",border:"none",cursor:"pointer",transition:"all .3s",
+          <button key={c} onClick={()=>setCat(c)} data-hover style={{padding:"12px 28px",fontFamily:"'Orbitron',sans-serif",fontSize:"14px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",border:"none",cursor:"pointer",transition:"all .3s",
             background:c===cat?"#e8001d":"rgba(255,255,255,0.04)",
-            color:c===cat?"white":"rgba(240,240,240,0.5)"}}
+            color:c===cat?"white":"rgba(240,240,240,0.88)"}}
           onMouseEnter={e=>{if(c!==cat){e.currentTarget.style.background="rgba(255,255,255,0.08)";e.currentTarget.style.color="#f0f0f0"}}}
-          onMouseLeave={e=>{if(c!==cat){e.currentTarget.style.background="rgba(255,255,255,0.04)";e.currentTarget.style.color="rgba(240,240,240,0.5)"}}}
+          onMouseLeave={e=>{if(c!==cat){e.currentTarget.style.background="rgba(255,255,255,0.04)";e.currentTarget.style.color="rgba(240,240,240,0.88)"}}}
           >{c}</button>
         ))}
       </div>
@@ -72,11 +72,11 @@ export default function GalleryPage(){
               />
               <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(8,8,8,0.88) 0%,rgba(8,8,8,0.2) 50%,transparent 100%)"}}/>
               {/* Category badge */}
-              <div style={{position:"absolute",top:"16px",left:"16px",background:"rgba(232,0,29,0.85)",padding:"4px 12px",fontFamily:"'Orbitron',sans-serif",fontSize:"8px",letterSpacing:"3px",color:"white",textTransform:"uppercase"}}>{item.cat}</div>
+              <div style={{position:"absolute",top:"16px",left:"16px",background:"rgba(232,0,29,0.85)",padding:"4px 12px",fontFamily:"'Orbitron',sans-serif",fontSize:"11px",letterSpacing:"3px",color:"white",textTransform:"uppercase"}}>{item.cat}</div>
               {/* Label */}
               <div style={{position:"absolute",bottom:"20px",left:"20px",right:"20px"}}>
-                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"11px",fontWeight:700,letterSpacing:"2px",color:"#f0f0f0",marginBottom:"4px"}}>{item.label}</div>
-                <div style={{fontSize:"11px",color:"rgba(240,240,240,0.5)",letterSpacing:"1px"}}>{item.sub}</div>
+                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"14px",fontWeight:700,letterSpacing:"2px",color:"#f0f0f0",marginBottom:"4px"}}>{item.label}</div>
+                <div style={{fontSize:"14px",color:"rgba(240,240,240,0.88)",letterSpacing:"1px"}}>{item.sub}</div>
               </div>
               {/* Zoom icon */}
               <div style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",opacity:0,transition:"opacity .3s",width:"48px",height:"48px",border:"1px solid white",display:"flex",alignItems:"center",justifyContent:"center"}} className="zoom-icon">
@@ -97,13 +97,13 @@ export default function GalleryPage(){
             <div style={{padding:"24px",background:"#0d0d0d"}}>
               <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
                 <div>
-                  <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"13px",fontWeight:700,letterSpacing:"2px",color:"#f0f0f0"}}>{lightbox.label}</div>
-                  <div style={{fontSize:"12px",color:"rgba(240,240,240,0.5)",marginTop:"4px"}}>{lightbox.sub}</div>
+                  <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"15px",fontWeight:700,letterSpacing:"2px",color:"#f0f0f0"}}>{lightbox.label}</div>
+                  <div style={{fontSize:"14px",color:"rgba(240,240,240,0.88)",marginTop:"4px"}}>{lightbox.sub}</div>
                 </div>
-                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"10px",color:"#e8001d",letterSpacing:"3px"}}>{lightbox.cat}</div>
+                <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"13px",color:"#e8001d",letterSpacing:"3px"}}>{lightbox.cat}</div>
               </div>
             </div>
-            <button onClick={()=>setLightbox(null)} style={{position:"absolute",top:"-48px",right:0,background:"none",border:"1px solid rgba(255,255,255,0.2)",color:"#f0f0f0",padding:"8px 14px",cursor:"pointer",fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"2px"}}>CLOSE</button>
+            <button onClick={()=>setLightbox(null)} style={{position:"absolute",top:"-48px",right:0,background:"none",border:"1px solid rgba(255,255,255,0.2)",color:"#f0f0f0",padding:"8px 14px",cursor:"pointer",fontFamily:"'Orbitron',sans-serif",fontSize:"13px",letterSpacing:"2px"}}>CLOSE</button>
           </div>
         </div>
       )}
