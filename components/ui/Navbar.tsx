@@ -50,7 +50,7 @@ export default function Navbar() {
           }}
         >
           <Image
-            src="/logo1.png"
+            src="/logo2.png"
             alt="Logo"
             fill
             priority
