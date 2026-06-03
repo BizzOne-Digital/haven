@@ -10,6 +10,7 @@ const services=[
   {num:"06",title:"Tire Repair",sub:"Plugs, Patches, and Pressure",img:`https://images.unsplash.com/photo-1645445522156-9ac06bc7a767?q=80`,desc:"A repairable puncture should never cost you a tire. We assess every puncture to ensure it falls within repairable limits, then perform a proper internal patch repair, not just a plug. Valve stem replacements, bead sealing, and slow-leak diagnosis are all part of our repair service.",features:["Internal patch repair, not just plug","Puncture repairable zone assessment","Valve stem replacement","Bead sealing for alloy corrosion","Nitrogen refill available"]},
   {num:"07",title:"Ceramic Coating",sub:"Paint Protection That Lasts",img:`${UNSPLASH}/photo-1580273916550-e323be2ae537?w=800&q=80`,desc:"Professional-grade nano-ceramic coatings bond to your paintwork at a molecular level, creating a semi-permanent layer of protection against UV degradation, oxidation, bird droppings, water spots, and light scratches. We prep every panel to perfection before application, and cure the coating under controlled conditions for maximum durability.",features:["9H hardness nano-ceramic formula","Full paint decontamination prep","Wheel face and brake caliper coating","5-year protection warranty","Graphene-infused upgrade available"]},
   {num:"08",title:"Window Tint",sub:"Privacy, UV Protection, Clean Aesthetics",img:`${UNSPLASH}/photo-1616422285623-13ff0162193c?w=800&q=80`,desc:"Our ceramic and carbon window films block up to 99% of UV radiation and dramatically reduce cabin heat without compromising visibility. We cut every film on-site using plotted templates for perfect fit, and apply by hand in a dust-controlled environment. Legal VLT levels matched for every province.",features:["Ceramic and carbon film options","99% UV block on all films","Heat rejection up to 65%","Plotted template precision cutting","Lifetime delamination warranty"]},
+  {num:"09",title:"Dashcam Installation",sub:"Professional Hardwired Setup",img:`${UNSPLASH}/photo-1549399542-7e3f8b79c341?w=800&q=80`,desc:"Protect yourself on the road with a professionally installed dashcam. We hardwire front and rear cameras with clean, hidden cable routing through your headliner and trim panels. Parking mode enabled so your camera stays active even when you walk away. We carry top brands including BlackVue, Thinkware, and Viofo.",features:["Front and rear camera installation","Hardwired with parking mode","Clean hidden cable routing","BlackVue, Thinkware, Viofo brands","Cloud-ready and GPS enabled"]},
 ];
 
 export default function ServicesPage(){
@@ -27,7 +28,7 @@ export default function ServicesPage(){
             OUR<br/><span style={{color:"#e8001d"}}>SERVICES</span>
           </h1>
           <p style={{fontSize:"18px",color:"rgba(240,240,240,0.88)",letterSpacing:"1.5px",maxWidth:"500px",lineHeight:1.85}}>
-            Eight premium services. One obsession: making sure every vehicle that leaves our shop is better than when it arrived.
+            Nine premium services. One obsession: making sure every vehicle that leaves our shop is better than when it arrived.
           </p>
         </div>
       </section>

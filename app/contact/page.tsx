@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const UNSPLASH="https://images.unsplash.com";
 
-const services=["Tire Installation","Wheel Alignment","Tire Balancing","Seasonal Change","Performance Wheels","Tire Repair","Ceramic Coating","Window Tint","Other"];
+const services=["Window Tint","Dashcam Installation","Tire Installation","Wheel Alignment","Tire Balancing","Seasonal Change","Performance Wheels","Tire Repair","Ceramic Coating","Other"];
 
 export default function ContactPage(){
   const [form,setForm]=useState({name:"",email:"",phone:"",service:"",vehicle:"",message:""});
@@ -86,8 +86,8 @@ export default function ContactPage(){
 
           {/* Sidebar info */}
           <div style={{display:"flex",flexDirection:"column",gap:"2px"}}>
-            {[{icon:<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e8001d" strokeWidth="1.5" strokeLinecap="round"><path d="M3 3h3l1.5 4-2 1.5a11 11 0 0 0 4 4L11 11l4 1.5V16a2 2 0 0 1-2 2C6.5 18 0 11.5 0 5a2 2 0 0 1 2-2z"/></svg>,label:"Phone",val:"(416) 431-5255",sub:"Mon to Sat  8AM to 6PM"},
-              {icon:<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e8001d" strokeWidth="1.5" strokeLinecap="round"><path d="M2 4h16v12H2z"/><path d="M2 4 L10 11 L18 4"/></svg>,label:"Email",val:"haventinttire@gmail.com",sub:"Reply within 24 hours"},
+            {[{icon:<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e8001d" strokeWidth="1.5" strokeLinecap="round"><path d="M3 3h3l1.5 4-2 1.5a11 11 0 0 0 4 4L11 11l4 1.5V16a2 2 0 0 1-2 2C6.5 18 0 11.5 0 5a2 2 0 0 1 2-2z"/></svg>,label:"Phone",val:"(416) 430-0040",sub:"(416) 431-5255"},
+              {icon:<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e8001d" strokeWidth="1.5" strokeLinecap="round"><path d="M2 4h16v12H2z"/><path d="M2 4 L10 11 L18 4"/></svg>,label:"Email",val:"havencustomstinttire@gmail.com",sub:"Reply within 24 hours"},
               {icon:<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e8001d" strokeWidth="1.5" strokeLinecap="round"><circle cx="10" cy="8" r="4"/><path d="M4 18 Q4 13 10 13 Q16 13 16 18"/></svg>,label:"Location",val:"124 Production Dr",sub:"Scarborough, ON M1H 2X8"},
               {icon:<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e8001d" strokeWidth="1.5" strokeLinecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 5 L10 10 L14 12"/></svg>,label:"Hours",val:"Mon to Sat  8AM to 6PM",sub:"Closed Sundays and Holidays"},
             ].map(i=>(

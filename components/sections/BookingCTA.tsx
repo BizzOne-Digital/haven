@@ -24,7 +24,7 @@ export default function BookingCTA(){
           onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(240,240,240,0.55)";e.currentTarget.style.color="#f0f0f0";e.currentTarget.style.transform="none"}}>View Services</Link>
         </div>
         <div className="reveal" style={{display:"flex",gap:"44px",justifyContent:"center",marginTop:"56px",flexWrap:"wrap"}}>
-          {[{l:"Phone",v:"(416) 431-5255"},{l:"Hours",v:"Mon to Sat  8AM to 6PM"},{l:"Location",v:"124 Production Dr, Scarborough"}].map(c=>(
+          {[{l:"Phone",v:"(416) 430-0040 · (416) 431-5255"},{l:"Hours",v:"Mon to Sat  8AM to 6PM"},{l:"Location",v:"124 Production Dr, Scarborough"}].map(c=>(
             <div key={c.l} style={{textAlign:"center"}}>
               <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"12px",letterSpacing:"4px",color:"#e8001d",textTransform:"uppercase",marginBottom:"4px"}}>{c.l}</div>
               <div style={{fontSize:"15px",color:"rgba(240,240,240,0.88)",letterSpacing:"1px"}}>{c.v}</div>

@@ -2,13 +2,13 @@
 import Link from "next/link";
 
 const col1 = [
+  { l: "Window Tint", h: "/services" },
+  { l: "Dashcam Installation", h: "/services" },
   { l: "Tire Installation", h: "/services" },
   { l: "Wheel Alignment", h: "/services" },
   { l: "Tire Balancing", h: "/services" },
   { l: "Seasonal Change", h: "/services" },
-  { l: "Performance Wheels", h: "/services" },
   { l: "Ceramic Coating", h: "/services" },
-  { l: "Window Tint", h: "/services" },
   { l: "Tire Repair", h: "/services" },
 ];
 
@@ -62,9 +62,9 @@ export default function Footer() {
               marginBottom: "26px",
             }}
           >
-            Performance tire and wheel specialists. Precision fitment,
-            premium brands, and unmatched service for drivers who demand
-            the best.
+            Performance tint, dashcam, and tire specialists. Premium
+            products, clean installs, and unmatched service for drivers
+            who demand the best.
           </p>
 
           <div style={{ display: "flex", gap: "10px" }}>

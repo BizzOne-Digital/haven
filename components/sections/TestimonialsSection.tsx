@@ -4,34 +4,34 @@ import { useEffect, useState } from "react";
 
 const reviews = [
   {
-    text: "Haven installed my Michelin Pilot Sport 5s on my M3 in under an hour. Perfect balance, zero vibration at highway speed. The team clearly knows performance vehicles inside out.",
-    name: "Marcus R.",
-    car: "2023 BMW M3 Competition",
-    init: "MR",
-  },
-  {
     text: "Best ceramic tint job I have ever experienced. Complete darkness outside, crystal clear from the inside. My Porsche has never looked more sinister. Worth every penny.",
     name: "Aisha K.",
     car: "2022 Porsche 911 GT3",
     init: "AK",
   },
   {
-    text: "Brought in my R8 for Pirellis and custom forged wheels. The fitment is absolutely flawless.",
-    name: "Devon T.",
-    car: "2021 Audi R8 V10 Plus",
-    init: "DT",
+    text: "Had a BlackVue front and rear dashcam hardwired. Zero visible cables, parking mode works flawlessly. These guys hid every wire like it was factory-installed. Super clean work.",
+    name: "Ryan P.",
+    car: "2024 Toyota GR Supra",
+    init: "RP",
   },
   {
-    text: "Seasonal changeover done in 45 minutes. Total professionals who genuinely care.",
+    text: "Haven installed my Michelin Pilot Sport 5s on my M3 in under an hour. Perfect balance, zero vibration at highway speed. The team clearly knows performance vehicles inside out.",
+    name: "Marcus R.",
+    car: "2023 BMW M3 Competition",
+    init: "MR",
+  },
+  {
+    text: "Tint on all windows plus a Thinkware dashcam done in the same visit. One shop for everything — that is the move. Quality is top tier on both.",
+    name: "Priya S.",
+    car: "2023 Tesla Model Y",
+    init: "PS",
+  },
+  {
+    text: "Seasonal changeover done in 45 minutes. Total professionals who genuinely care about doing it right.",
     name: "Lena M.",
     car: "2020 Mercedes AMG C63",
     init: "LM",
-  },
-  {
-    text: "Had a blowout, got me in same-day and rolling on a matched Bridgestone before dinner.",
-    name: "Jason W.",
-    car: "2019 Corvette C7 Z06",
-    init: "JW",
   },
 ];
 

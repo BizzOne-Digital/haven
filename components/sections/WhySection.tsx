@@ -18,7 +18,7 @@ function Stat({t,s,l}:{t:number,s:string,l:string}){
     </div>
   );
 }
-const pts=[{title:"Same-Day Service",desc:"Most installations completed within 90 minutes. Back on the road fast without compromising quality."},{title:"Certified Technicians",desc:"All techs hold OEM certifications for every brand we carry. No guesswork, pure expertise."},{title:"Warranty Backed",desc:"Every service backed by our labor warranty. Manufacturer warranties fully honored."},{title:"Premium Brands Only",desc:"We stock Michelin, Pirelli, Bridgestone, Toyo, Yokohama, and Nitto. No off-brand compromises."}];
+const pts=[{title:"Same-Day Service",desc:"Most installs — tint, dashcam, or tires — completed same day. Back on the road fast without compromising quality."},{title:"Clean, Professional Installs",desc:"Hidden wiring on dashcams, precision-cut tint templates, OEM torque on every wheel. No shortcuts, ever."},{title:"Warranty Backed",desc:"Every service backed by our labor warranty. Film, dashcam, and tire manufacturer warranties fully honored."},{title:"One Shop, Three Specialties",desc:"Window tint, dashcam installation, and full tire service under one roof. No running around town."}];
 export default function WhySection(){
   return(
     <section id="why" style={{background:"#0d0d0d",padding:"100px 0",position:"relative",overflow:"hidden"}}>
@@ -27,13 +27,13 @@ export default function WhySection(){
         <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"80px",alignItems:"center"}} className="why-grid">
           <div className="reveal-left">
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"2px"}}>
-              {[{t:10000,s:"+",l:"Tires Installed"},{t:500,s:"+",l:"Happy Clients"},{t:15,s:"+",l:"Expert Technicians"},{t:8,s:"",l:"Years in Business"}].map(s=><Stat key={s.l} t={s.t} s={s.s} l={s.l}/>)}
+              {[{t:10000,s:"+",l:"Jobs Completed"},{t:500,s:"+",l:"Happy Clients"},{t:3,s:"",l:"Core Specialties"},{t:8,s:"",l:"Years in Business"}].map(s=><Stat key={s.l} t={s.t} s={s.s} l={s.l}/>)}
             </div>
           </div>
           <div className="reveal-right">
             <span className="section-tag">Why Haven</span>
             <h2 className="section-title" style={{marginBottom:"16px"}}>PRECISION IS<br/>OUR STANDARD</h2>
-            <p style={{fontSize:"17px",color:"rgba(240,240,240,0.82)",lineHeight:1.85,maxWidth:"400px",marginBottom:"36px"}}>Every vehicle that rolls into our shop leaves better than it arrived. Not a promise, a proven track record built over 8 years.</p>
+            <p style={{fontSize:"17px",color:"rgba(240,240,240,0.82)",lineHeight:1.85,maxWidth:"400px",marginBottom:"36px"}}>Whether it is tint, dashcam, or tires — every vehicle that rolls into our shop leaves better than it arrived. Built on 8 years of doing it right.</p>
             <div style={{display:"flex",flexDirection:"column",gap:"22px"}}>
               {pts.map(p=>(
                 <div key={p.title} style={{display:"flex",gap:"16px",alignItems:"flex-start"}}>
