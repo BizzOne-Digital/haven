@@ -127,11 +127,11 @@ export default function HeroSection() {
           onMouseEnter={e=>{e.currentTarget.style.borderColor="#e8001d";e.currentTarget.style.color="#e8001d";e.currentTarget.style.transform="translateY(-3px)"}}
           onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(240,240,240,0.72)";e.currentTarget.style.color="#f0f0f0";e.currentTarget.style.transform="translateY(0)"}}>Explore Services</Link>
         </div>
-        <div style={{display:"flex",gap:"36px",marginTop:"56px",flexWrap:"wrap",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease 1s"}}>
+        <div className="hero-stats" style={{display:"flex",gap:"0",marginTop:"56px",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease 1s"}}>
           {[{num:"10K+",label:"Jobs Completed"},{num:"5 Star",label:"Rated Service"},{num:"8 Years",label:"Experience"},{num:"3+",label:"Core Services"}].map(s=>(
-            <div key={s.label} style={{borderLeft:"2px solid #e8001d",paddingLeft:"14px"}}>
-              <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"21px",fontWeight:700,color:"#f0f0f0"}}>{s.num}</div>
-              <div style={{fontSize:"13px",letterSpacing:"3px",color:"rgba(240,240,240,0.72)",textTransform:"uppercase"}}>{s.label}</div>
+            <div key={s.label} className="hero-stat-item" style={{flex:"1 1 0",borderLeft:"2px solid #e8001d",paddingLeft:"14px",paddingRight:"10px"}}>
+              <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"18px",fontWeight:700,color:"#f0f0f0",whiteSpace:"nowrap"}}>{s.num}</div>
+              <div style={{fontSize:"11px",letterSpacing:"2px",color:"rgba(240,240,240,0.72)",textTransform:"uppercase",whiteSpace:"nowrap"}}>{s.label}</div>
             </div>
           ))}
         </div>
@@ -150,12 +150,8 @@ export default function HeroSection() {
         )}
       </div>
 
-      <div style={{position:"absolute",bottom:"32px",left:"60px",zIndex:10,display:"flex",alignItems:"center",gap:"10px",opacity:mounted?1:0,transition:"opacity .8s ease 1.4s"}}>
-        <div style={{width:"36px",height:"1px",background:"#e8001d",animation:"glowPulse 2s ease-in-out infinite"}}/>
-        <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"12px",letterSpacing:"4px",color:"rgba(240,240,240,0.72)",textTransform:"uppercase"}}>Scroll</span>
-      </div>
       <div style={{position:"absolute",bottom:0,left:0,right:0,height:"160px",background:"linear-gradient(to bottom,transparent,#080808)",pointerEvents:"none",zIndex:6}}/>
-      <style>{`@media(max-width:768px){.hero-left{width:100%!important;padding:100px 24px 40px!important}section#hero{flex-direction:column!important}.hero-right{min-height:380px!important}}`}</style>
+      <style>{`@media(max-width:768px){.hero-left{width:100%!important;padding:100px 24px 40px!important}section#hero{flex-direction:column!important}.hero-right{min-height:380px!important}.hero-stats{display:grid!important;grid-template-columns:1fr 1fr!important;gap:20px 0!important}.hero-stat-item{padding-left:12px!important;padding-right:6px!important}}`}</style>
     </section>
   );
 }
