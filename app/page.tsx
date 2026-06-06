@@ -4,4 +4,18 @@ import ServicesPreview from "@/components/sections/ServicesPreview";
 import WhySection from "@/components/sections/WhySection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import BookingCTA from "@/components/sections/BookingCTA";
-export default function HomePage(){return(<main><HeroSection/><CoreServices/><ServicesPreview/><WhySection/><TestimonialsSection/><BookingCTA/></main>)}
+import BrandsStrip from "@/components/sections/BrandsStrip";
+
+export default function Home() {
+  return (
+    <main>
+      <HeroSection />
+      <CoreServices />
+      <ServicesPreview />
+      <WhySection />
+      <BrandsStrip />
+      <TestimonialsSection />
+      <BookingCTA />
+    </main>
+  );
+}
