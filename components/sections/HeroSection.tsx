@@ -285,9 +285,10 @@ export default function HeroSection() {
         @keyframes glowPulse{0%,100%{opacity:1}50%{opacity:.55}}
         @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
         @media(max-width:768px){
-          .hero-left{width:100%!important;padding:100px 24px 40px!important}
-          section#hero{flex-direction:column!important}
-          .hero-right{min-height:320px!important;position:relative!important}
+  .hero-left{width:100%!important;padding:100px 24px 40px!important}
+  section#hero{flex-direction:column!important;min-height:auto!important}
+  .hero-right{display:none!important}
+}
         }
       `}</style>
     </section>

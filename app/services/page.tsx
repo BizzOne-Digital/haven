@@ -4,7 +4,6 @@ const UNSPLASH = "https://images.unsplash.com";
 
 const services = [
   {
-    id: "ppf-service",
     num: "01",
     title: "PPF Service",
     sub: "Invisible Paint Protection Film",
@@ -19,7 +18,6 @@ const services = [
     ],
   },
   {
-    id: "ceramic-coating",
     num: "02",
     title: "Ceramic Coating",
     sub: "Showroom Shine That Endures",
@@ -34,7 +32,6 @@ const services = [
     ],
   },
   {
-    id: "dashcams",
     num: "03",
     title: "Dashcams",
     sub: "Professional Hardwired Setup",
@@ -49,7 +46,6 @@ const services = [
     ],
   },
   {
-    id: "carplay",
     num: "04",
     title: "CarPlay Integration",
     sub: "Factory-Fit Apple CarPlay",
@@ -64,7 +60,6 @@ const services = [
     ],
   },
   {
-    id: "ambient-lights",
     num: "05",
     title: "Ambient Lights",
     sub: "Multi-Zone Custom LED Lighting",
@@ -79,7 +74,6 @@ const services = [
     ],
   },
   {
-    id: "wheel-lights",
     num: "06",
     title: "Wheel Lights",
     sub: "Unmissable Day or Night",
@@ -94,7 +88,6 @@ const services = [
     ],
   },
   {
-    id: "starlights",
     num: "07",
     title: "Starlights",
     sub: "Your Private Galaxy Every Drive",
@@ -109,7 +102,6 @@ const services = [
     ],
   },
   {
-    id: "tire-services",
     num: "08",
     title: "Tire Services",
     sub: "Precision Mounting and Balancing",
@@ -124,7 +116,6 @@ const services = [
     ],
   },
   {
-    id: "ceramic-tint",
     num: "09",
     title: "Ceramic Tint",
     sub: "99% UV Block, Zero Signal Interference",
@@ -139,7 +130,6 @@ const services = [
     ],
   },
   {
-    id: "tail-lights",
     num: "10",
     title: "Tail Lights",
     sub: "Bold Smoked OEM-Quality Finish",
@@ -154,7 +144,6 @@ const services = [
     ],
   },
   {
-    id: "car-protection",
     num: "11",
     title: "Car Protection",
     sub: "Complete Exterior and Interior Defence",
@@ -169,7 +158,6 @@ const services = [
     ],
   },
   {
-    id: "custom-upgrades",
     num: "12",
     title: "Custom Upgrades",
     sub: "Vinyl Wraps, Blackouts, and More",
@@ -188,75 +176,18 @@ const services = [
 export default function ServicesPage() {
   return (
     <main style={{ background: "#080808", paddingTop: "100px" }}>
-
       {/* Hero */}
-      <section
-        style={{
-          padding: "80px 60px 100px",
-          position: "relative",
-          overflow: "hidden",
-          borderBottom: "1px solid rgba(255,255,255,0.05)",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage:
-              "linear-gradient(rgba(232,0,29,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(232,0,29,0.025) 1px,transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            right: "-10%",
-            top: "50%",
-            transform: "translateY(-50%)",
-            width: "600px",
-            height: "600px",
-            background: "radial-gradient(circle,rgba(232,0,29,0.08) 0%,transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
+      <section style={{ padding: "80px 60px 100px", position: "relative", overflow: "hidden", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(232,0,29,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(232,0,29,0.025) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
+        <div style={{ position: "absolute", right: "-10%", top: "50%", transform: "translateY(-50%)", width: "600px", height: "600px", background: "radial-gradient(circle,rgba(232,0,29,0.08) 0%,transparent 70%)", pointerEvents: "none" }} />
         <div style={{ position: "relative", maxWidth: "1400px", margin: "0 auto" }}>
-          <span
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "10px",
-              fontFamily: "'Orbitron',sans-serif",
-              fontSize: "13px",
-              letterSpacing: "6px",
-              color: "#e8001d",
-              textTransform: "uppercase",
-              marginBottom: "20px",
-            }}
-          >
-            <span style={{ width: "28px", height: "1px", background: "#e8001d", display: "block" }} />
-            What We Do
+          <span style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontFamily: "'Orbitron',sans-serif", fontSize: "13px", letterSpacing: "6px", color: "#e8001d", textTransform: "uppercase", marginBottom: "20px" }}>
+            <span style={{ width: "28px", height: "1px", background: "#e8001d", display: "block" }} />What We Do
           </span>
-          <h1
-            style={{
-              fontFamily: "'Bebas Neue',sans-serif",
-              fontSize: "clamp(60px,8vw,110px)",
-              lineHeight: 0.9,
-              color: "#f0f0f0",
-              letterSpacing: "2px",
-              marginBottom: "24px",
-            }}
-          >
+          <h1 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(60px,8vw,110px)", lineHeight: .9, color: "#f0f0f0", letterSpacing: "2px", marginBottom: "24px" }}>
             OUR<br /><span style={{ color: "#e8001d" }}>SERVICES</span>
           </h1>
-          <p
-            style={{
-              fontSize: "18px",
-              color: "rgba(240,240,240,0.88)",
-              letterSpacing: "1.5px",
-              maxWidth: "500px",
-              lineHeight: 1.85,
-            }}
-          >
+          <p style={{ fontSize: "18px", color: "rgba(240,240,240,0.88)", letterSpacing: "1.5px", maxWidth: "500px", lineHeight: 1.85 }}>
             Twelve premium services. One obsession: making sure every vehicle that leaves our shop is better than when it arrived.
           </p>
         </div>
@@ -265,138 +196,29 @@ export default function ServicesPage() {
       {/* Services list */}
       <section style={{ padding: "0 60px 120px", maxWidth: "1400px", margin: "0 auto" }}>
         {services.map((s, idx) => (
-          <div
-            key={s.num}
-            id={s.id}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "0",
-              borderBottom: "1px solid rgba(255,255,255,0.05)",
-              padding: "80px 0",
-              scrollMarginTop: "100px",
-            }}
-            className="svc-row"
-          >
+          <div key={s.num} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0", borderBottom: "1px solid rgba(255,255,255,0.05)", padding: "80px 0" }} className="svc-row">
             {/* Image */}
-            <div
-              style={{
-                order: idx % 2 === 0 ? 1 : 2,
-                position: "relative",
-                overflow: "hidden",
-                minHeight: "420px",
-                background: "#111",
-              }}
-              className="svc-img"
-            >
+            <div style={{ order: idx % 2 === 0 ? 1 : 2, position: "relative", overflow: "hidden", minHeight: "420px", background: "#111" }} className="svc-img">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={s.img}
-                alt={s.title}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  display: "block",
-                  filter: "brightness(0.6) saturate(1.2)",
-                  transition: "transform .65s ease,filter .4s",
-                }}
+              <img src={s.img} alt={s.title}
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", filter: "brightness(0.6) saturate(1.2)", transition: "transform .65s ease,filter .4s" }}
                 className="img-zoom"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = "none";
-                }}
+                onError={e => { (e.target as HTMLImageElement).style.display = "none"; }}
               />
               <div className="img-overlay" />
-              <div
-                style={{
-                  position: "absolute",
-                  top: "24px",
-                  left: "24px",
-                  fontFamily: "'Orbitron',sans-serif",
-                  fontSize: "42px",
-                  fontWeight: 900,
-                  color: "rgba(232,0,29,0.15)",
-                  letterSpacing: "2px",
-                }}
-              >
-                {s.num}
-              </div>
+              <div style={{ position: "absolute", top: "24px", left: "24px", fontFamily: "'Orbitron',sans-serif", fontSize: "42px", fontWeight: 900, color: "rgba(232,0,29,0.15)", letterSpacing: "2px" }}>{s.num}</div>
             </div>
-
             {/* Content */}
-            <div
-              style={{
-                order: idx % 2 === 0 ? 2 : 1,
-                background: "#0d0d0d",
-                padding: "60px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-              }}
-              className="svc-content"
-            >
-              <span
-                style={{
-                  fontFamily: "'Orbitron',sans-serif",
-                  fontSize: "13px",
-                  letterSpacing: "5px",
-                  color: "#e8001d",
-                  textTransform: "uppercase",
-                  marginBottom: "12px",
-                }}
-              >
-                {s.sub}
-              </span>
-              <h2
-                style={{
-                  fontFamily: "'Bebas Neue',sans-serif",
-                  fontSize: "clamp(36px,3.5vw,52px)",
-                  color: "#f0f0f0",
-                  marginBottom: "20px",
-                  lineHeight: 0.95,
-                }}
-              >
-                {s.title}
-              </h2>
-              <div
-                style={{ width: "60px", height: "2px", background: "#e8001d", marginBottom: "24px" }}
-              />
-              <p
-                style={{
-                  fontSize: "16px",
-                  color: "rgba(240,240,240,0.88)",
-                  lineHeight: 1.85,
-                  marginBottom: "28px",
-                }}
-              >
-                {s.desc}
-              </p>
+            <div style={{ order: idx % 2 === 0 ? 2 : 1, background: "#0d0d0d", padding: "60px", display: "flex", flexDirection: "column", justifyContent: "center" }} className="svc-content">
+              <span style={{ fontFamily: "'Orbitron',sans-serif", fontSize: "13px", letterSpacing: "5px", color: "#e8001d", textTransform: "uppercase", marginBottom: "12px" }}>{s.sub}</span>
+              <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(36px,3.5vw,52px)", color: "#f0f0f0", marginBottom: "20px", lineHeight: .95 }}>{s.title}</h2>
+              <div style={{ width: "60px", height: "2px", background: "#e8001d", marginBottom: "24px" }} />
+              <p style={{ fontSize: "16px", color: "rgba(240,240,240,0.88)", lineHeight: 1.85, marginBottom: "28px" }}>{s.desc}</p>
               <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "10px" }}>
-                {s.features.map((f) => (
-                  <li
-                    key={f}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "10px",
-                      fontSize: "15px",
-                      color: "rgba(240,240,240,0.88)",
-                    }}
-                  >
-                    <span
-                      style={{
-                        width: "20px",
-                        height: "20px",
-                        border: "1px solid #e8001d",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#e8001d" strokeWidth="1.5">
-                        <path d="M2 5 L4 7 L8 3" />
-                      </svg>
+                {s.features.map(f => (
+                  <li key={f} style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", color: "rgba(240,240,240,0.88)" }}>
+                    <span style={{ width: "20px", height: "20px", border: "1px solid #e8001d", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#e8001d" strokeWidth="1.5"><path d="M2 5 L4 7 L8 3" /></svg>
                     </span>
                     {f}
                   </li>
@@ -411,10 +233,10 @@ export default function ServicesPage() {
         .img-zoom:hover { transform: scale(1.04); filter: brightness(0.75) saturate(1.4) !important; }
         .img-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(232,0,29,0.08) 0%, transparent 60%); }
         @media(max-width:900px) {
-          .svc-row  { grid-template-columns: 1fr !important; }
-          .svc-img  { order: 1 !important; min-height: 260px !important; }
+          .svc-row { grid-template-columns: 1fr !important; }
+          .svc-img { order: 1 !important; min-height: 260px !important; }
           .svc-content { order: 2 !important; padding: 36px 24px !important; }
-          section   { padding-left: 24px !important; padding-right: 24px !important; }
+          section { padding-left: 24px !important; padding-right: 24px !important; }
         }
       `}</style>
     </main>
