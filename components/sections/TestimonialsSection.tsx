@@ -2,13 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
-/* ══════════════════════════════════════════════════════
-   TRUSTINDEX WIDGET ID — Yahan apni widget ID daalo
-   (Script src se jo ID hai woh yahan paste karo)
-   ══════════════════════════════════════════════════════ */
 const TRUSTINDEX_WIDGET_ID = "d9f3a0e73ef363416236d7fa18d";
 
-/* ── Google "G" Icon ── */
 function GoogleIcon({ size = 20, opacity = 1 }: { size?: number; opacity?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 48 48" style={{ opacity, flexShrink: 0 }}>
@@ -20,7 +15,6 @@ function GoogleIcon({ size = 20, opacity = 1 }: { size?: number; opacity?: numbe
   );
 }
 
-/* ── Stars SVG ── */
 function Stars({ rating, size = 14 }: { rating: number; size?: number }) {
   return (
     <div style={{ display: "inline-flex", gap: "2px" }}>
@@ -36,30 +30,23 @@ function Stars({ rating, size = 14 }: { rating: number; size?: number }) {
 export default function ReviewsSection() {
   const widgetRef = useRef<HTMLDivElement>(null);
 
-  /* ── Load Trustindex script dynamically ── */
   useEffect(() => {
-    // Check if script already loaded
-    const existingScript = document.querySelector(
-      `script[src*="trustindex.io/loader.js?${TRUSTINDEX_WIDGET_ID}"]`
-    );
+    const container = widgetRef.current;
+    if (!container) return;
+
+    const existingScript = container.querySelector("script");
     if (existingScript) return;
 
     const script = document.createElement("script");
     script.src = `https://cdn.trustindex.io/loader.js?${TRUSTINDEX_WIDGET_ID}`;
     script.defer = true;
     script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup on unmount if needed
-      try { document.body.removeChild(script); } catch {}
-    };
+    container.appendChild(script);
   }, []);
 
   return (
     <section className="reviews-section" style={{ padding: "100px 0", background: "#080808", overflow: "hidden" }}>
 
-      {/* ── Custom Header (Haven Customs design) ── */}
       <div style={{ maxWidth: "1400px", margin: "0 auto", paddingLeft: "60px", paddingRight: "60px" }}>
         <div className="reviews-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "50px", flexWrap: "wrap", gap: "30px" }}>
           <div>
@@ -72,7 +59,6 @@ export default function ReviewsSection() {
             </h2>
           </div>
 
-          {/* Google Badge */}
           <div style={{ display: "flex", alignItems: "center", gap: "20px", padding: "20px 28px", border: "1px solid rgba(255,255,255,0.07)", background: "rgba(255,255,255,0.02)", flexShrink: 0 }}>
             <GoogleIcon size={32} />
             <div>
@@ -87,13 +73,9 @@ export default function ReviewsSection() {
         <div style={{ width: "60px", height: "2px", background: "#e8001d", marginBottom: "40px" }} />
       </div>
 
-      {/* ── Trustindex Live Widget ── */}
-      <div ref={widgetRef} className="ti-widget-wrapper" style={{ maxWidth: "1400px", margin: "0 auto", paddingLeft: "60px", paddingRight: "60px" }}>
-        {/* Trustindex will inject the widget here automatically */}
-        <div data-src={`https://cdn.trustindex.io/loader.js?${TRUSTINDEX_WIDGET_ID}`} />
-      </div>
+      {/* Trustindex widget renders here — no data-src div, only script */}
+      <div ref={widgetRef} className="ti-widget-wrapper" style={{ maxWidth: "1400px", margin: "0 auto", paddingLeft: "60px", paddingRight: "60px" }} />
 
-      {/* ── Bottom CTA ── */}
       <div style={{ maxWidth: "1400px", margin: "0 auto", paddingLeft: "60px", paddingRight: "60px" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-start", marginTop: "36px" }}>
           <a
@@ -109,11 +91,7 @@ export default function ReviewsSection() {
         </div>
       </div>
 
-      {/* ══════════════════════════════════════════════════
-          CSS OVERRIDES — Trustindex ko dark theme mein force karo
-          ══════════════════════════════════════════════════ */}
       <style>{`
-        /* ── Force dark theme on entire Trustindex widget ── */
         .ti-widget-wrapper [class*="ti-widget"],
         .ti-widget-wrapper [class*="ti-review"],
         .ti-widget-wrapper div[style] {
@@ -121,133 +99,70 @@ export default function ReviewsSection() {
           color: rgba(240,240,240,0.55) !important;
           font-family: inherit !important;
         }
-
-        /* Widget main container */
-        .ti-widget {
-          background: transparent !important;
-        }
-
-        /* Review cards */
-        .ti-review-item,
-        .ti-widget .ti-review-item {
+        .ti-widget { background: transparent !important; }
+        .ti-review-item, .ti-widget .ti-review-item {
           background: rgba(255,255,255,0.025) !important;
           border: 1px solid rgba(255,255,255,0.07) !important;
           border-radius: 0 !important;
           transition: border-color 0.3s, background 0.3s, transform 0.3s !important;
         }
-        .ti-review-item:hover,
-        .ti-widget .ti-review-item:hover {
+        .ti-review-item:hover, .ti-widget .ti-review-item:hover {
           border-color: rgba(232,0,29,0.25) !important;
           background: rgba(232,0,29,0.03) !important;
           transform: translateY(-4px) !important;
         }
-
-        /* Reviewer names */
-        .ti-widget .ti-name,
-        .ti-widget .ti-reviewer-name,
-        .ti-widget [class*="name"] a,
-        .ti-widget [class*="name"] span,
+        .ti-widget .ti-name, .ti-widget .ti-reviewer-name,
+        .ti-widget [class*="name"] a, .ti-widget [class*="name"] span,
         .ti-widget .ti-review-header .ti-name {
           color: #f0f0f0 !important;
           font-family: 'Bebas Neue', sans-serif !important;
           letter-spacing: 1.5px !important;
           text-decoration: none !important;
         }
-
-        /* Review text */
-        .ti-widget .ti-review-text,
-        .ti-widget .ti-review-content,
-        .ti-widget p,
-        .ti-widget .ti-text {
+        .ti-widget .ti-review-text, .ti-widget .ti-review-content,
+        .ti-widget p, .ti-widget .ti-text {
           color: rgba(240,240,240,0.55) !important;
           font-size: 13.5px !important;
           line-height: 1.85 !important;
         }
-
-        /* Date / time */
-        .ti-widget .ti-date,
-        .ti-widget .ti-review-date,
-        .ti-widget [class*="date"] {
+        .ti-widget .ti-date, .ti-widget .ti-review-date, .ti-widget [class*="date"] {
           color: rgba(240,240,240,0.35) !important;
           font-size: 11px !important;
         }
-
-        /* Stars — keep Google yellow */
-        .ti-widget .ti-stars .ti-star,
-        .ti-widget [class*="star"] svg,
-        .ti-widget .ti-stars svg {
+        .ti-widget .ti-stars .ti-star, .ti-widget [class*="star"] svg, .ti-widget .ti-stars svg {
           fill: #FBBC04 !important;
           color: #FBBC04 !important;
         }
-
-        /* Widget header / summary bar */
-        .ti-widget .ti-header,
-        .ti-widget .ti-widget-header,
-        .ti-widget [class*="header"] {
+        .ti-widget .ti-header, .ti-widget .ti-widget-header, .ti-widget [class*="header"] {
           background: transparent !important;
           border-bottom: 1px solid rgba(255,255,255,0.05) !important;
         }
-        .ti-widget .ti-header *,
-        .ti-widget .ti-widget-header * {
-          color: #f0f0f0 !important;
-        }
-
-        /* Navigation arrows */
-        .ti-widget .ti-prev,
-        .ti-widget .ti-next,
-        .ti-widget [class*="arrow"],
-        .ti-widget [class*="nav"] button {
+        .ti-widget .ti-header *, .ti-widget .ti-widget-header * { color: #f0f0f0 !important; }
+        .ti-widget .ti-prev, .ti-widget .ti-next, .ti-widget [class*="arrow"], .ti-widget [class*="nav"] button {
           background: rgba(232,0,29,0.1) !important;
           border: 1px solid rgba(232,0,29,0.3) !important;
           color: #e8001d !important;
           border-radius: 0 !important;
         }
-        .ti-widget .ti-prev:hover,
-        .ti-widget .ti-next:hover,
-        .ti-widget [class*="arrow"]:hover {
+        .ti-widget .ti-prev:hover, .ti-widget .ti-next:hover, .ti-widget [class*="arrow"]:hover {
           background: rgba(232,0,29,0.2) !important;
           border-color: rgba(232,0,29,0.5) !important;
         }
-
-        /* Links inside widget */
-        .ti-widget a {
-          color: #e8001d !important;
-          text-decoration: none !important;
-        }
-        .ti-widget a:hover {
-          text-decoration: underline !important;
-        }
-
-        /* Profile images */
-        .ti-widget .ti-profile-img,
-        .ti-widget [class*="avatar"],
-        .ti-widget [class*="photo"] img {
-          border-radius: 0 !important;
-        }
-
-        /* Hide Trustindex branding / powered by */
-        .ti-widget .ti-footer,
-        .ti-widget [class*="powered"],
-        .ti-widget [class*="branding"],
-        .ti-widget [class*="logo-text"],
-        .ti-widget a[href*="trustindex"] {
+        .ti-widget a { color: #e8001d !important; text-decoration: none !important; }
+        .ti-widget a:hover { text-decoration: underline !important; }
+        .ti-widget .ti-profile-img, .ti-widget [class*="avatar"], .ti-widget [class*="photo"] img { border-radius: 0 !important; }
+        .ti-widget .ti-footer, .ti-widget [class*="powered"], .ti-widget [class*="branding"],
+        .ti-widget [class*="logo-text"], .ti-widget a[href*="trustindex"] {
           opacity: 0.3 !important;
           filter: grayscale(1) brightness(0.5) !important;
         }
-
-        /* Scrollbar hide */
         .ti-widget-wrapper ::-webkit-scrollbar { display: none; }
         .ti-widget-wrapper * { -ms-overflow-style: none; scrollbar-width: none; }
-
-        /* General CTA styling */
         .reviews-cta:hover { text-decoration: underline !important; }
-
-        /* ── Responsive ── */
         @media(max-width:900px) {
           .reviews-section { padding: 60px 0 !important; }
           .reviews-header { flex-direction: column !important; align-items: flex-start !important; }
-          .ti-widget-wrapper,
-          .reviews-section > div { padding-left: 24px !important; padding-right: 24px !important; }
+          .ti-widget-wrapper, .reviews-section > div { padding-left: 24px !important; padding-right: 24px !important; }
         }
       `}</style>
     </section>
