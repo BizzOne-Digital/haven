@@ -38,6 +38,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 50);
+    fn(); // check on mount in case page loaded scrolled
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
@@ -53,6 +54,13 @@ export default function Navbar() {
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  // cleanup timer on unmount
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
   }, []);
 
   const openDrop  = () => { if (timerRef.current) clearTimeout(timerRef.current); setDropOpen(true); };
@@ -97,24 +105,23 @@ export default function Navbar() {
                   onMouseLeave={e => (e.currentTarget.style.color = pathname.startsWith("/services") ? "#e8001d" : "rgba(240,240,240,0.88)")}
                 >
                   {l.label}
-                  {/* chevron */}
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"
                     style={{ transition:"transform .3s", transform: dropOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
                     <path d="M2 3.5 L5 6.5 L8 3.5"/>
                   </svg>
                 </button>
 
-                {/* Dropdown panel */}
+                {/* Dropdown panel — FIXED: removed duplicate transform */}
                 <div style={{
-                  position:"absolute", top:"calc(100% + 18px)", left:"50%", transform:"translateX(-50%)",
+                  position:"absolute", top:"calc(100% + 18px)", left:"50%",
+                  transform: dropOpen
+                    ? "translateX(-50%) translateY(0)"
+                    : "translateX(-50%) translateY(-8px)",
                   background:"#111", border:"1px solid rgba(255,255,255,0.08)",
                   borderTop:"2px solid #e8001d",
                   minWidth:"220px", padding:"8px 0",
                   opacity: dropOpen ? 1 : 0,
                   pointerEvents: dropOpen ? "auto" : "none",
-                  transform: dropOpen
-                    ? "translateX(-50%) translateY(0)"
-                    : "translateX(-50%) translateY(-8px)",
                   transition:"opacity .22s ease, transform .22s ease",
                   boxShadow:"0 20px 40px rgba(0,0,0,0.6)",
                 }}>
@@ -150,7 +157,6 @@ export default function Navbar() {
                     </Link>
                   ))}
 
-                  {/* View All */}
                   <Link href="/services" style={{
                     display:"block", padding:"12px 24px", marginTop:"4px",
                     fontFamily:"'Orbitron',sans-serif", fontSize:"10px",
