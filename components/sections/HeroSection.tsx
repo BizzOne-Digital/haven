@@ -5,13 +5,13 @@ import Link from "next/link";
 function TireSVG({ rotation }: { rotation: number }) {
   return (
     <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"
-      style={{ width: "100%", height: "100%", filter: "drop-shadow(0 0 50px rgba(232,0,29,0.28))" }}>
+      style={{ width: "100%", height: "100%", filter: "drop-shadow(0 0 40px rgba(232,0,29,0.22))" }}>
       <defs>
         <radialGradient id="tg" cx="35%" cy="35%" r="65%"><stop offset="0%" stopColor="#1e1e1e"/><stop offset="60%" stopColor="#0f0f0f"/><stop offset="100%" stopColor="#050505"/></radialGradient>
         <radialGradient id="rg" cx="38%" cy="32%" r="68%"><stop offset="0%" stopColor="#484848"/><stop offset="30%" stopColor="#1c1c1c"/><stop offset="70%" stopColor="#111"/><stop offset="100%" stopColor="#080808"/></radialGradient>
         <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#8a8a8a"/><stop offset="40%" stopColor="#2e2e2e"/><stop offset="100%" stopColor="#141414"/></linearGradient>
         <linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#ff1a2e"/><stop offset="100%" stopColor="#8b0010"/></linearGradient>
-        <linearGradient id="shine" x1="20%" y1="10%" x2="80%" y2="90%"><stop offset="0%" stopColor="rgba(255,255,255,0.12)"/><stop offset="45%" stopColor="rgba(255,255,255,0.02)"/><stop offset="100%" stopColor="rgba(255,255,255,0)"/></linearGradient>
+        <linearGradient id="shine" x1="20%" y1="10%" x2="80%" y2="90%"><stop offset="0%" stopColor="rgba(255,255,255,0.10)"/><stop offset="45%" stopColor="rgba(255,255,255,0.02)"/><stop offset="100%" stopColor="rgba(255,255,255,0)"/></linearGradient>
       </defs>
       <circle cx="250" cy="250" r="230" fill="url(#tg)"/>
       <circle cx="250" cy="250" r="230" fill="none" stroke="#0a0a0a" strokeWidth="3"/>
@@ -71,13 +71,6 @@ function TireSVG({ rotation }: { rotation: number }) {
       <text x="250" y="254" textAnchor="middle" fill="white" fontSize="7" fontFamily="'Orbitron',sans-serif" fontWeight="700">HAVEN</text>
       <circle cx="250" cy="250" r="162" fill="url(#shine)"/>
       <circle cx="250" cy="250" r="196" fill="none" stroke="rgba(255,255,255,0.055)" strokeWidth="14" strokeDasharray="90 250" strokeLinecap="round" transform="rotate(-55,250,250)"/>
-      <g transform={`rotate(${rotation*0.28},250,250)`} opacity="0.3">
-        <path id="arc1" d="M 68,250 A 182,182 0 0,1 432,250" fill="none"/>
-        <text fontSize="7.5" fontFamily="'Orbitron',sans-serif" fill="#555" letterSpacing="3.5">
-          <textPath href="#arc1">HAVEN CUSTOMS  PREMIUM AUTO UPGRADES  MISSISSAUGA</textPath>
-        </text>
-      </g>
-      <ellipse cx="208" cy="178" rx="50" ry="30" fill="rgba(255,255,255,0.04)" transform="rotate(-28,208,178)"/>
     </svg>
   );
 }
@@ -85,9 +78,9 @@ function TireSVG({ rotation }: { rotation: number }) {
 const UNSPLASH = "https://images.unsplash.com";
 
 const galleryImages = [
-  { src: `${UNSPLASH}/photo-1503376780353-7e6692767b70?w=600&q=80`, alt: "Car workshop" },
-  { src: `${UNSPLASH}/photo-1492144534655-ae79c964c9d7?w=600&q=80`, alt: "Premium car" },
-  { src: `${UNSPLASH}/photo-1544636331-e26879cd4d9b?w=600&q=80`, alt: "Car detail" },
+  { src: `${UNSPLASH}/photo-1503376780353-7e6692767b70?w=1200&q=85`, alt: "Car workshop" },
+  { src: `${UNSPLASH}/photo-1492144534655-ae79c964c9d7?w=1200&q=85`, alt: "Premium car" },
+  { src: `${UNSPLASH}/photo-1544636331-e26879cd4d9b?w=1200&q=85`, alt: "Car detail" },
 ];
 
 export default function HeroSection() {
@@ -102,127 +95,200 @@ export default function HeroSection() {
     setMounted(true);
     let t = 0;
     const animate = () => {
-      t += 0.012; rotRef.current = (rotRef.current + 0.55) % 360;
-      setRotation(rotRef.current); setFloatY(Math.sin(t) * 17);
+      t += 0.012;
+      rotRef.current = (rotRef.current + 0.5) % 360;
+      setRotation(rotRef.current);
+      setFloatY(Math.sin(t) * 14);
       frameRef.current = requestAnimationFrame(animate);
     };
     frameRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frameRef.current);
   }, []);
 
-  // Cycle gallery images
   useEffect(() => {
     const t = setInterval(() => setActiveImg(i => (i + 1) % galleryImages.length), 3500);
     return () => clearInterval(t);
   }, []);
 
   return (
-    <section id="hero" style={{position:"relative",width:"100%",minHeight:"100svh",display:"flex",overflow:"hidden",background:"radial-gradient(ellipse at 65% 50%,#160004 0%,#0a0a0a 45%,#050505 100%)"}}>
-      <div style={{position:"absolute",inset:0,pointerEvents:"none",backgroundImage:"linear-gradient(rgba(232,0,29,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(232,0,29,0.025) 1px,transparent 1px)",backgroundSize:"64px 64px"}}/>
+    <section id="hero" style={{
+      position: "relative",
+      width: "100%",
+      minHeight: "100svh",
+      display: "flex",
+      overflow: "hidden",
+      background: "radial-gradient(ellipse at 60% 50%,#1a0003 0%,#0a0a0a 50%,#050505 100%)"
+    }}>
+      {/* Grid background */}
+      <div style={{position:"absolute",inset:0,pointerEvents:"none",backgroundImage:"linear-gradient(rgba(232,0,29,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(232,0,29,0.03) 1px,transparent 1px)",backgroundSize:"56px 56px"}}/>
+
+      {/* Top accent line */}
       <div style={{position:"absolute",top:0,left:0,right:0,height:"2px",background:"linear-gradient(90deg,transparent,#e8001d 30%,#e8001d 70%,transparent)",zIndex:10}}/>
-      <div style={{position:"absolute",right:"-4%",top:"50%",transform:"translateY(-50%)",width:"700px",height:"700px",background:"radial-gradient(circle,rgba(232,0,29,0.13) 0%,transparent 68%)",animation:"glowPulse 4s ease-in-out infinite",pointerEvents:"none"}}/>
+
+      {/* Background image — more visible now */}
+      {mounted && (
+        <div style={{position:"absolute",inset:0,zIndex:1,overflow:"hidden"}}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={galleryImages[activeImg].src}
+            alt=""
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              // Increased brightness so images are clearly visible
+              filter: "brightness(0.32) saturate(1.1)",
+              transition: "opacity 0.8s ease"
+            }}
+            onError={e => { (e.target as HTMLImageElement).style.display = "none"; }}
+          />
+          {/* Overlay: heavy on left for text readability, fades on right so image shows */}
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(to right,rgba(5,5,5,0.97) 0%,rgba(5,5,5,0.75) 50%,rgba(5,5,5,0.15) 100%)"
+          }}/>
+        </div>
+      )}
 
       {/* LEFT COLUMN */}
-      <div style={{flex:"0 0 auto",width:"clamp(300px,48%,560px)",display:"flex",flexDirection:"column",justifyContent:"center",padding:"120px 60px 80px",position:"relative",zIndex:5}} className="hero-left">
-
+      <div
+        style={{
+          flex: "0 0 auto",
+          width: "clamp(300px,52%,580px)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: "120px 60px 80px",
+          position: "relative",
+          zIndex: 5
+        }}
+        className="hero-left"
+      >
         {/* Eyebrow */}
-        <div style={{display:"flex",alignItems:"center",gap:"12px",marginBottom:"20px",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease .2s"}}>
-          <div style={{width:"32px",height:"1px",background:"#e8001d"}}/>
-          <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"6px",color:"#e8001d",textTransform:"uppercase"}}>Premium Auto Upgrades · Mississauga</span>
+        <div style={{display:"flex",alignItems:"center",gap:"12px",marginBottom:"18px",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease .2s"}}>
+          <div style={{width:"28px",height:"1px",background:"#e8001d"}}/>
+          <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"9px",letterSpacing:"5px",color:"#e8001d",textTransform:"uppercase"}}>Premium Auto Upgrades</span>
         </div>
 
         {/* Main heading */}
-        <h1 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(58px,7.8vw,108px)",lineHeight:.9,letterSpacing:"2px",color:"#f0f0f0",marginBottom:"22px",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(30px)",transition:"all .9s ease .4s"}}>
-          CRAFTED FOR<br/><span style={{color:"#e8001d",textShadow:"0 0 60px rgba(232,0,29,0.5)"}}>THE BOLD</span><br/>DRIVER
+        <h1 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(58px,7.8vw,108px)",lineHeight:.88,letterSpacing:"2px",color:"#f0f0f0",marginBottom:"18px",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(30px)",transition:"all .9s ease .4s"}}>
+          CRAFTED FOR<br/><span style={{color:"#e8001d",textShadow:"0 0 50px rgba(232,0,29,0.45)"}}>THE BOLD</span><br/>DRIVER
         </h1>
 
-        {/* Tagline pill — THREE SERVICES. ONE SHOP. */}
-        <div style={{display:"inline-flex",alignItems:"center",gap:"10px",marginBottom:"22px",opacity:mounted?1:0,transition:"opacity .8s ease .5s"}}>
-          <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"11px",letterSpacing:"4px",color:"rgba(240,240,240,0.55)",textTransform:"uppercase"}}>
-            PROTECTION.
-          </span>
+        {/* Tagline pills */}
+        <div style={{display:"inline-flex",alignItems:"center",gap:"10px",marginBottom:"16px",opacity:mounted?1:0,transition:"opacity .8s ease .5s"}}>
+          <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"3.5px",color:"rgba(240,240,240,0.5)",textTransform:"uppercase"}}>PROTECTION.</span>
           <span style={{width:"4px",height:"4px",background:"#e8001d",display:"block",flexShrink:0}}/>
-          <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"11px",letterSpacing:"4px",color:"rgba(240,240,240,0.55)",textTransform:"uppercase"}}>
-            UPGRADES.
-          </span>
+          <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"3.5px",color:"rgba(240,240,240,0.5)",textTransform:"uppercase"}}>UPGRADES.</span>
           <span style={{width:"4px",height:"4px",background:"#e8001d",display:"block",flexShrink:0}}/>
-          <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"11px",letterSpacing:"4px",color:"rgba(240,240,240,0.55)",textTransform:"uppercase"}}>
-            ONE SHOP.
-          </span>
+          <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"3.5px",color:"rgba(240,240,240,0.5)",textTransform:"uppercase"}}>ONE SHOP.</span>
         </div>
 
-        <div style={{height:"2px",background:"linear-gradient(to right,#e8001d,transparent)",marginBottom:"22px",width:mounted?"120px":"0px",transition:"width 1.1s ease .7s"}}/>
+        <div style={{height:"2px",background:"linear-gradient(to right,#e8001d,transparent)",marginBottom:"18px",width:mounted?"110px":"0px",transition:"width 1.1s ease .7s"}}/>
 
-        <p style={{fontSize:"15px",fontWeight:300,letterSpacing:"1.5px",color:"rgba(240,240,240,0.48)",lineHeight:1.9,marginBottom:"44px",maxWidth:"360px",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease .6s"}}>
+        <p style={{fontSize:"14px",fontWeight:300,letterSpacing:"1.3px",color:"rgba(240,240,240,0.45)",lineHeight:1.85,marginBottom:"40px",maxWidth:"350px",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease .6s"}}>
           From ceramic tint and PPF to custom lighting and interior upgrades — every detail, elevated with precision and pride.
         </p>
 
         {/* Buttons */}
-        <div style={{display:"flex",gap:"14px",flexWrap:"wrap",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease .8s"}}>
-          <Link href="/contact" style={{background:"#e8001d",color:"white",padding:"15px 38px",fontFamily:"'Rajdhani',sans-serif",fontSize:"13px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",textDecoration:"none",display:"inline-block",transition:"all .3s",clipPath:"polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)"}}
-          onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.background="#ff0025";(e.currentTarget as HTMLElement).style.boxShadow="0 0 40px rgba(232,0,29,0.7)";(e.currentTarget as HTMLElement).style.transform="translateY(-3px)"}}
-          onMouseLeave={e=>{(e.currentTarget as HTMLElement).style.background="#e8001d";(e.currentTarget as HTMLElement).style.boxShadow="none";(e.currentTarget as HTMLElement).style.transform="translateY(0)"}}>Book Your Service</Link>
-          <Link href="/services" style={{background:"transparent",color:"#f0f0f0",padding:"15px 38px",border:"1px solid rgba(240,240,240,0.22)",fontFamily:"'Rajdhani',sans-serif",fontSize:"13px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",textDecoration:"none",display:"inline-block",transition:"all .3s"}}
-          onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.borderColor="#e8001d";(e.currentTarget as HTMLElement).style.color="#e8001d";(e.currentTarget as HTMLElement).style.transform="translateY(-3px)"}}
-          onMouseLeave={e=>{(e.currentTarget as HTMLElement).style.borderColor="rgba(240,240,240,0.22)";(e.currentTarget as HTMLElement).style.color="#f0f0f0";(e.currentTarget as HTMLElement).style.transform="translateY(0)"}}>Explore Services</Link>
+        <div style={{display:"flex",gap:"12px",flexWrap:"wrap",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease .8s"}}>
+          <Link href="/contact" style={{background:"#e8001d",color:"white",padding:"14px 36px",fontFamily:"'Rajdhani',sans-serif",fontSize:"12px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",textDecoration:"none",display:"inline-block",transition:"all .3s",clipPath:"polygon(7px 0%,100% 0%,calc(100% - 7px) 100%,0% 100%)"}}
+            onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.background="#ff0025";(e.currentTarget as HTMLElement).style.boxShadow="0 0 36px rgba(232,0,29,0.65)";(e.currentTarget as HTMLElement).style.transform="translateY(-2px)"}}
+            onMouseLeave={e=>{(e.currentTarget as HTMLElement).style.background="#e8001d";(e.currentTarget as HTMLElement).style.boxShadow="none";(e.currentTarget as HTMLElement).style.transform="translateY(0)"}}>
+            Book Your Service
+          </Link>
+          <Link href="/services" style={{background:"transparent",color:"#f0f0f0",padding:"14px 36px",border:"1px solid rgba(240,240,240,0.22)",fontFamily:"'Rajdhani',sans-serif",fontSize:"12px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",textDecoration:"none",display:"inline-block",transition:"all .3s"}}
+            onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.borderColor="#e8001d";(e.currentTarget as HTMLElement).style.color="#e8001d";(e.currentTarget as HTMLElement).style.transform="translateY(-2px)"}}
+            onMouseLeave={e=>{(e.currentTarget as HTMLElement).style.borderColor="rgba(240,240,240,0.22)";(e.currentTarget as HTMLElement).style.color="#f0f0f0";(e.currentTarget as HTMLElement).style.transform="translateY(0)"}}>
+            Explore Services
+          </Link>
         </div>
 
         {/* Stats */}
-        <div style={{display:"flex",gap:"36px",marginTop:"56px",flexWrap:"wrap",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease 1s"}}>
-          {[{num:"1,500+",label:"Vehicles Upgraded"},{num:"5 Star",label:"Rated Service"},{num:"8 Years",label:"Experience"},].map(s=>(
-            <div key={s.label} style={{borderLeft:"2px solid #e8001d",paddingLeft:"14px"}}>
-              <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"19px",fontWeight:700,color:"#f0f0f0"}}>{s.num}</div>
+        <div style={{display:"flex",gap:"32px",marginTop:"52px",flexWrap:"wrap",opacity:mounted?1:0,transform:mounted?"translateY(0)":"translateY(20px)",transition:"all .8s ease 1s"}}>
+          {[
+            {num:"1,500+",label:"Vehicles Upgraded"},
+            {num:"5 Star",label:"Rated Service"},
+            {num:"8 Years",label:"Experience"},
+          ].map(s=>(
+            <div key={s.label} style={{borderLeft:"2px solid #e8001d",paddingLeft:"12px"}}>
+              <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"18px",fontWeight:700,color:"#f0f0f0"}}>{s.num}</div>
+              <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"8px",letterSpacing:"2px",color:"rgba(240,240,240,0.35)",textTransform:"uppercase",marginTop:"3px"}}>{s.label}</div>
             </div>
           ))}
         </div>
-
-       
       </div>
 
-      {/* RIGHT COLUMN — tire + floating image */}
-      <div style={{flex:1,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",minHeight:"100svh"}} className="hero-right">
+      {/* RIGHT COLUMN — full height, tire in bottom-right corner */}
+      <div style={{flex:1,position:"relative",minHeight:"100svh"}} className="hero-right">
+        {/* Red glow behind tire */}
+        <div style={{
+          position: "absolute",
+          bottom: "5%",
+          right: "-4%",
+          width: "500px",
+          height: "500px",
+          background: "radial-gradient(circle,rgba(232,0,29,0.14) 0%,transparent 70%)",
+          pointerEvents: "none",
+          zIndex: 2,
+          animation: "glowPulse 4s ease-in-out infinite"
+        }}/>
 
-        {/* Background image fading behind the tire */}
+        {/* Shadow under tire */}
+        <div style={{
+          position: "absolute",
+          bottom: "6%",
+          right: "4%",
+          width: "340px",
+          height: "20px",
+          background: "radial-gradient(ellipse,rgba(0,0,0,0.85) 0%,transparent 70%)",
+          borderRadius: "50%",
+          filter: "blur(8px)",
+          zIndex: 2
+        }}/>
+
+        {/* Red accent line */}
+        <div style={{
+          position: "absolute",
+          bottom: "8.5%",
+          right: "2%",
+          width: "370px",
+          height: "1px",
+          background: "linear-gradient(90deg,transparent,rgba(232,0,29,0.6) 40%,rgba(232,0,29,0.6) 60%,transparent)",
+          animation: "glowPulse 3s ease-in-out infinite",
+          zIndex: 2
+        }}/>
+
+        {/* TIRE — bottom-right corner, partially off-screen for cinematic feel */}
         {mounted && (
-          <div style={{position:"absolute",inset:0,zIndex:1,overflow:"hidden"}}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={galleryImages[activeImg].src} alt=""
-              style={{width:"100%",height:"100%",objectFit:"cover",filter:"brightness(0.1) saturate(0.8)",transition:"opacity .8s ease"}}
-              onError={e=>{(e.target as HTMLImageElement).style.display="none"}}
-            />
-            <div style={{position:"absolute",inset:0,background:"linear-gradient(to right,rgba(8,8,8,0.95) 0%,rgba(8,8,8,0.4) 100%)"}}/>
-          </div>
-        )}
-
-        <div style={{position:"absolute",bottom:"9%",left:"50%",transform:"translateX(-50%)",width:"90%",pointerEvents:"none",zIndex:2}}>
-          {[0,1,2,3].map(i=><div key={i} style={{position:"absolute",bottom:`${i*12}px`,left:"50%",width:`${320-i*50}px`,height:`${24-i*4}px`,background:`radial-gradient(ellipse,rgba(28,22,22,${0.55-i*0.12}) 0%,transparent 70%)`,borderRadius:"50%",transform:"translateX(-50%)",animation:`smokeRise ${2.5+i*0.9}s ease-out infinite`,animationDelay:`${i*0.55}s`}}/>)}
-        </div>
-        <div style={{position:"absolute",bottom:"12%",left:"50%",transform:"translateX(-50%)",width:"360px",height:"32px",background:"radial-gradient(ellipse,rgba(0,0,0,0.75) 0%,transparent 70%)",filter:"blur(8px)",animation:"glowPulse 2.5s ease-in-out infinite",zIndex:2}}/>
-        <div style={{position:"absolute",bottom:"13%",left:"50%",transform:"translateX(-50%)",width:"400px",height:"2px",background:"linear-gradient(90deg,transparent,rgba(232,0,29,0.55) 40%,rgba(232,0,29,0.55) 60%,transparent)",animation:"glowPulse 3s ease-in-out infinite",zIndex:2}}/>
-
-        {mounted && (
-          <div style={{position:"relative",width:"clamp(280px,46vw,530px)",height:"clamp(280px,46vw,530px)",transform:`translateY(${floatY}px)`,transition:"transform 0.05s linear",zIndex:3,animation:"fadeIn .6s ease .3s both"}}>
+          <div style={{
+            position: "absolute",
+            bottom: "-5%",
+            right: "-5%",
+            width: "clamp(300px,38vw,480px)",
+            height: "clamp(300px,38vw,480px)",
+            transform: `translateY(${floatY}px)`,
+            transition: "transform 0.05s linear",
+            zIndex: 3,
+            animation: "fadeIn .6s ease .3s both"
+          }}>
             <TireSVG rotation={rotation}/>
           </div>
         )}
-
-        {/* Floating badge top-right */}
-        {mounted && (
-          <div style={{position:"absolute",top:"120px",right:"40px",zIndex:4,background:"rgba(8,8,8,0.85)",border:"1px solid rgba(232,0,29,0.35)",padding:"16px 20px",backdropFilter:"blur(12px)",animation:"fadeIn 1s ease 1.5s both"}}>
-            <div style={{fontFamily:"'Orbitron',sans-serif",fontSize:"8px",letterSpacing:"3px",color:"#e8001d",textTransform:"uppercase",marginBottom:"6px"}}>Est. 2017</div>
-            <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"18px",letterSpacing:"2px",color:"#f0f0f0",lineHeight:1}}>MISSISSAUGA</div>
-            <div style={{fontFamily:"'Rajdhani',sans-serif",fontSize:"11px",color:"rgba(240,240,240,0.4)",marginTop:"4px",letterSpacing:"1px"}}>Ontario, Canada</div>
-          </div>
-        )}
       </div>
 
-     
+      {/* Bottom fade */}
       <div style={{position:"absolute",bottom:0,left:0,right:0,height:"160px",background:"linear-gradient(to bottom,transparent,#080808)",pointerEvents:"none",zIndex:6}}/>
+
       <style>{`
-        @keyframes glowPulse{0%,100%{opacity:1}50%{opacity:.6}}
-        @keyframes smokeRise{0%{opacity:.7;transform:translateX(-50%) scaleX(1)}100%{opacity:0;transform:translateX(-50%) scaleX(1.4) translateY(-20px)}}
-        @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-        @media(max-width:768px){.hero-left{width:100%!important;padding:100px 24px 40px!important}section#hero{flex-direction:column!important}.hero-right{min-height:380px!important;display:none!important}}
+        @keyframes glowPulse{0%,100%{opacity:1}50%{opacity:.55}}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+        @media(max-width:768px){
+          .hero-left{width:100%!important;padding:100px 24px 40px!important}
+          section#hero{flex-direction:column!important}
+          .hero-right{min-height:320px!important;position:relative!important}
+        }
       `}</style>
     </section>
   );

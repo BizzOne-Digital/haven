@@ -25,20 +25,21 @@ const features = [
 
 export default function WhySection() {
   return (
-    <section style={{padding:"100px 60px",background:"#080808"}} className="why-section">
+   <section style={{padding:"100px 60px",background:"#080808"}} className="why-section">
       <div style={{maxWidth:"1400px",margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:"80px",alignItems:"start"}} className="why-inner">
         <div style={{position:"relative",overflow:"hidden"}}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://haventire.ca/wp-content/uploads/2026/03/DC-CAR-6.png"
+          <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80"
             alt="Haven Customs Quality"
             style={{width:"100%",height:"600px",objectFit:"cover",filter:"brightness(0.7)"}}
-            onError={e=>{(e.target as HTMLImageElement).src="https://haventire.ca/wp-content/uploads/2023/12/image-bn2-500x718.jpg"}}
+            onError={e=>{(e.target as HTMLImageElement).src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"}}
           />
           <div style={{position:"absolute",inset:0,background:"linear-gradient(135deg,rgba(232,0,29,0.15),transparent)"}}/>
           <div style={{position:"absolute",bottom:"30px",left:"30px",background:"#e8001d",padding:"14px 24px",fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"3px",textTransform:"uppercase",color:"#fff"}}>
             Haven Customs · Est. 2017
           </div>
         </div>
+ 
 
         <div>
           <span style={{display:"inline-flex",alignItems:"center",gap:"10px",fontFamily:"'Orbitron',sans-serif",fontSize:"10px",letterSpacing:"6px",color:"#e8001d",textTransform:"uppercase",marginBottom:"14px"}}>

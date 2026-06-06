@@ -1,22 +1,40 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
+const serviceLinks = [
+  { label: "PPF Service",        href: "/services#ppf-service" },
+  { label: "Ceramic Coating",    href: "/services#ceramic-coating" },
+  { label: "Dashcams",           href: "/services#dashcams" },
+  { label: "CarPlay Integration",href: "/services#carplay" },
+  { label: "Ambient Lights",     href: "/services#ambient-lights" },
+  { label: "Wheel Lights",       href: "/services#wheel-lights" },
+  { label: "Starlights",         href: "/services#starlights" },
+  { label: "Tire Services",      href: "/services#tire-services" },
+  { label: "Ceramic Tint",       href: "/services#ceramic-tint" },
+  { label: "Tail Lights",        href: "/services#tail-lights" },
+  { label: "Car Protection",     href: "/services#car-protection" },
+  { label: "Custom Upgrades",    href: "/services#custom-upgrades" },
+];
+
 const links = [
-  { label: "Home",     href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Brands",   href: "/brands" },
-  { label: "Gallery",  href: "/gallery" },
-  { label: "About",    href: "/about" },
-  { label: "Contact",  href: "/contact" },
+  { label: "Home",               href: "/" },
+  { label: "About",              href: "/about" },
+  { label: "Services",           href: "/services", dropdown: true },
+  { label: "Brands",             href: "/brands" },
+  { label: "Book An Appointment",href: "/booking" },
+  { label: "Contact",            href: "/contact" },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled,   setScrolled]   = useState(false);
+  const [menuOpen,   setMenuOpen]   = useState(false);
+  const [dropOpen,   setDropOpen]   = useState(false);
   const pathname = usePathname();
+  const dropRef  = useRef<HTMLLIElement>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 50);
@@ -24,7 +42,21 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  useEffect(() => { setMenuOpen(false); }, [pathname]);
+  useEffect(() => { setMenuOpen(false); setDropOpen(false); }, [pathname]);
+
+  // close dropdown on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (dropRef.current && !dropRef.current.contains(e.target as Node)) {
+        setDropOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const openDrop  = () => { if (timerRef.current) clearTimeout(timerRef.current); setDropOpen(true); };
+  const closeDrop = () => { timerRef.current = setTimeout(() => setDropOpen(false), 150); };
 
   return (
     <>
@@ -39,119 +71,187 @@ export default function Navbar() {
       }}>
 
         {/* Logo */}
-        <Link
-          href="/"
-          style={{
-            position: "relative",
-            width: "170px",
-            height: "52px",
-            display: "block",
-            flexShrink: 0,
-          }}
-        >
-          <Image
-            src="/logo2.png"
-            alt="Logo"
-            fill
-            priority
-            style={{ objectFit: "contain" }}
-          />
+        <Link href="/" style={{ position:"relative", width:"170px", height:"52px", display:"block", flexShrink:0 }}>
+          <Image src="/logo2.png" alt="Logo" fill priority style={{ objectFit:"contain" }} />
         </Link>
 
         {/* Desktop Links */}
-        <ul style={{display:"flex",gap:"32px",listStyle:"none"}} className="nav-links-desktop">
+        <ul style={{ display:"flex", gap:"32px", listStyle:"none", alignItems:"center" }} className="nav-links-desktop">
           {links.map(l => (
-            <li key={l.href}>
-              <Link href={l.href} data-hover style={{
-                color: pathname===l.href ? "#e8001d" : "rgba(240,240,240,0.88)",
-                textDecoration:"none",fontSize:"14px",fontWeight:600,
-                letterSpacing:"3px",textTransform:"uppercase",
-                fontFamily:"'Rajdhani',sans-serif",transition:"color .3s",
-                borderBottom: pathname===l.href ? "1px solid #e8001d" : "1px solid transparent",
-                paddingBottom:"2px",
-              }}
-              onMouseEnter={e=>(e.currentTarget.style.color="#e8001d")}
-              onMouseLeave={e=>(e.currentTarget.style.color=pathname===l.href?"#e8001d":"rgba(240,240,240,0.88)")}
-              >{l.label}</Link>
-            </li>
+            l.dropdown ? (
+              /* ── Services with dropdown ── */
+              <li key={l.href} ref={dropRef} style={{ position:"relative" }}
+                onMouseEnter={openDrop} onMouseLeave={closeDrop}>
+                <button
+                  onClick={() => setDropOpen(v => !v)}
+                  style={{
+                    background:"none", border:"none", cursor:"pointer", padding:0,
+                    display:"inline-flex", alignItems:"center", gap:"6px",
+                    color: pathname.startsWith("/services") ? "#e8001d" : "rgba(240,240,240,0.88)",
+                    fontSize:"14px", fontWeight:600, letterSpacing:"3px", textTransform:"uppercase",
+                    fontFamily:"'Rajdhani',sans-serif", transition:"color .3s",
+                    borderBottom: pathname.startsWith("/services") ? "1px solid #e8001d" : "1px solid transparent",
+                    paddingBottom:"2px",
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "#e8001d")}
+                  onMouseLeave={e => (e.currentTarget.style.color = pathname.startsWith("/services") ? "#e8001d" : "rgba(240,240,240,0.88)")}
+                >
+                  {l.label}
+                  {/* chevron */}
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"
+                    style={{ transition:"transform .3s", transform: dropOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
+                    <path d="M2 3.5 L5 6.5 L8 3.5"/>
+                  </svg>
+                </button>
+
+                {/* Dropdown panel */}
+                <div style={{
+                  position:"absolute", top:"calc(100% + 18px)", left:"50%", transform:"translateX(-50%)",
+                  background:"#111", border:"1px solid rgba(255,255,255,0.08)",
+                  borderTop:"2px solid #e8001d",
+                  minWidth:"220px", padding:"8px 0",
+                  opacity: dropOpen ? 1 : 0,
+                  pointerEvents: dropOpen ? "auto" : "none",
+                  transform: dropOpen
+                    ? "translateX(-50%) translateY(0)"
+                    : "translateX(-50%) translateY(-8px)",
+                  transition:"opacity .22s ease, transform .22s ease",
+                  boxShadow:"0 20px 40px rgba(0,0,0,0.6)",
+                }}>
+                  {/* small triangle */}
+                  <div style={{
+                    position:"absolute", top:"-7px", left:"50%", transform:"translateX(-50%)",
+                    width:0, height:0,
+                    borderLeft:"7px solid transparent",
+                    borderRight:"7px solid transparent",
+                    borderBottom:"7px solid #e8001d",
+                  }}/>
+
+                  {serviceLinks.map(s => (
+                    <Link key={s.href} href={s.href} style={{
+                      display:"block", padding:"11px 24px",
+                      fontFamily:"'Rajdhani',sans-serif", fontSize:"14px", fontWeight:600,
+                      letterSpacing:"1.5px", textTransform:"uppercase",
+                      color:"rgba(240,240,240,0.78)", textDecoration:"none",
+                      borderBottom:"1px solid rgba(255,255,255,0.04)",
+                      transition:"all .2s",
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.color = "#e8001d";
+                      e.currentTarget.style.background = "rgba(232,0,29,0.06)";
+                      e.currentTarget.style.paddingLeft = "30px";
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.color = "rgba(240,240,240,0.78)";
+                      e.currentTarget.style.background = "transparent";
+                      e.currentTarget.style.paddingLeft = "24px";
+                    }}>
+                      {s.label}
+                    </Link>
+                  ))}
+
+                  {/* View All */}
+                  <Link href="/services" style={{
+                    display:"block", padding:"12px 24px", marginTop:"4px",
+                    fontFamily:"'Orbitron',sans-serif", fontSize:"10px",
+                    letterSpacing:"3px", textTransform:"uppercase",
+                    color:"#e8001d", textDecoration:"none",
+                    borderTop:"1px solid rgba(232,0,29,0.2)",
+                    transition:"all .2s",
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(232,0,29,0.08)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}>
+                    View All Services →
+                  </Link>
+                </div>
+              </li>
+            ) : (
+              <li key={l.href}>
+                <Link href={l.href} style={{
+                  color: pathname===l.href ? "#e8001d" : "rgba(240,240,240,0.88)",
+                  textDecoration:"none", fontSize:"14px", fontWeight:600,
+                  letterSpacing:"3px", textTransform:"uppercase",
+                  fontFamily:"'Rajdhani',sans-serif", transition:"color .3s",
+                  borderBottom: pathname===l.href ? "1px solid #e8001d" : "1px solid transparent",
+                  paddingBottom:"2px",
+                }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#e8001d")}
+                onMouseLeave={e => (e.currentTarget.style.color = pathname===l.href ? "#e8001d" : "rgba(240,240,240,0.88)")}
+                >{l.label}</Link>
+              </li>
+            )
           ))}
         </ul>
 
         {/* Book Now button */}
-        <Link href="/contact" className="clip-btn" data-hover style={{
-          background:"#e8001d",color:"white",padding:"10px 26px",
-          fontFamily:"'Rajdhani',sans-serif",fontSize:"14px",fontWeight:700,
-          letterSpacing:"3px",textTransform:"uppercase",textDecoration:"none",
-          display:"inline-block",transition:"all .3s",
+        <Link href="/contact" style={{
+          background:"#e8001d", color:"white", padding:"10px 26px",
+          fontFamily:"'Rajdhani',sans-serif", fontSize:"14px", fontWeight:700,
+          letterSpacing:"3px", textTransform:"uppercase", textDecoration:"none",
+          display:"inline-block", transition:"all .3s",
         }}
-        onMouseEnter={e=>{e.currentTarget.style.background="#ff0025";e.currentTarget.style.boxShadow="0 0 28px rgba(232,0,29,0.6)"}}
-        onMouseLeave={e=>{e.currentTarget.style.background="#e8001d";e.currentTarget.style.boxShadow="none"}}
+        className="nav-book-btn"
+        onMouseEnter={e => { e.currentTarget.style.background="#ff0025"; e.currentTarget.style.boxShadow="0 0 28px rgba(232,0,29,0.6)"; }}
+        onMouseLeave={e => { e.currentTarget.style.background="#e8001d"; e.currentTarget.style.boxShadow="none"; }}
         >Book Now</Link>
 
         {/* Hamburger */}
-        <button onClick={()=>setMenuOpen(!menuOpen)} className="hamburger-btn" aria-label="Menu"
-          style={{display:"none",background:"none",border:"1px solid rgba(255,255,255,0.15)",padding:"8px 10px",cursor:"pointer",flexDirection:"column",gap:"5px"}}>
-          {[0,1,2].map(i=>(
+        <button onClick={() => setMenuOpen(!menuOpen)} className="hamburger-btn" aria-label="Menu"
+          style={{ display:"none", background:"none", border:"1px solid rgba(255,255,255,0.15)", padding:"8px 10px", cursor:"pointer", flexDirection:"column", gap:"5px" }}>
+          {[0,1,2].map(i => (
             <span key={i} style={{
-              display:"block",
-              width:"22px",
-              height:"1.5px",
-              background:"#f0f0f0",
-              transition:"all .3s",
-              transformOrigin:"center",
-              transform:menuOpen?(i===0?"rotate(45deg) translate(4.5px,4.5px)":i===1?"scaleX(0)":"rotate(-45deg) translate(4.5px,-4.5px)"):"none"
-            }} />
+              display:"block", width:"22px", height:"1.5px", background:"#f0f0f0", transition:"all .3s", transformOrigin:"center",
+              transform: menuOpen
+                ? (i===0 ? "rotate(45deg) translate(4.5px,4.5px)" : i===1 ? "scaleX(0)" : "rotate(-45deg) translate(4.5px,-4.5px)")
+                : "none",
+            }}/>
           ))}
         </button>
       </nav>
 
-      {/* Mobile drawer */}
-      {menuOpen && (
-        <div style={{
-          position:"fixed",
-          inset:0,
-          background:"rgba(8,8,8,0.99)",
-          zIndex:999,
-          display:"flex",
-          flexDirection:"column",
-          alignItems:"center",
-          justifyContent:"center",
-          gap:"30px"
-        }}>
-          <button onClick={()=>setMenuOpen(false)} style={{
-            position:"absolute",
-            top:"24px",
-            right:"24px",
-            background:"none",
-            border:"none",
-            color:"rgba(240,240,240,0.88)",
-            fontSize:"26px",
-            cursor:"pointer",
-            fontFamily:"monospace"
-          }}>✕</button>
+      {/* Mobile full-screen drawer */}
+      <div style={{
+        position:"fixed", inset:0, background:"rgba(8,8,8,0.99)", zIndex:999,
+        display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:"24px",
+        opacity: menuOpen ? 1 : 0,
+        pointerEvents: menuOpen ? "auto" : "none",
+        transition:"opacity .3s ease",
+      }}>
+        <button onClick={() => setMenuOpen(false)} style={{
+          position:"absolute", top:"24px", right:"24px",
+          background:"none", border:"none", color:"rgba(240,240,240,0.88)", fontSize:"26px", cursor:"pointer", fontFamily:"monospace",
+        }}>✕</button>
 
-          {links.map(l=>(
-            <Link key={l.href} href={l.href} style={{
-              fontFamily:"'Bebas Neue',sans-serif",
-              fontSize:"48px",
-              letterSpacing:"4px",
-              color: pathname===l.href?"#e8001d":"#f0f0f0",
-              textDecoration:"none",
-              transition:"color .3s"
+        {links.map(l => (
+          <Link key={l.href} href={l.href} style={{
+            fontFamily:"'Bebas Neue',sans-serif", fontSize:"48px", letterSpacing:"4px",
+            color: pathname===l.href ? "#e8001d" : "#f0f0f0", textDecoration:"none", transition:"color .3s",
+          }}
+          onMouseEnter={e => (e.currentTarget.style.color = "#e8001d")}
+          onMouseLeave={e => (e.currentTarget.style.color = pathname===l.href ? "#e8001d" : "#f0f0f0")}
+          >{l.label}</Link>
+        ))}
+
+        {/* Mobile service links */}
+        <div style={{ borderTop:"1px solid rgba(255,255,255,0.08)", paddingTop:"20px", display:"flex", flexDirection:"column", alignItems:"center", gap:"12px" }}>
+          {serviceLinks.map(s => (
+            <Link key={s.href} href={s.href} style={{
+              fontFamily:"'Rajdhani',sans-serif", fontSize:"18px", letterSpacing:"3px", textTransform:"uppercase",
+              color:"rgba(240,240,240,0.6)", textDecoration:"none", transition:"color .3s",
             }}
-            onMouseEnter={e=>(e.currentTarget.style.color="#e8001d")}
-            onMouseLeave={e=>(e.currentTarget.style.color=pathname===l.href?"#e8001d":"#f0f0f0")}
-            >{l.label}</Link>
+            onMouseEnter={e => (e.currentTarget.style.color = "#e8001d")}
+            onMouseLeave={e => (e.currentTarget.style.color = "rgba(240,240,240,0.6)")}
+            >{s.label}</Link>
           ))}
         </div>
-      )}
+      </div>
 
       <style>{`
         @media(max-width:900px){
-          .nav-links-desktop{display:none !important}
-          .hamburger-btn{display:flex !important}
-          nav{padding:${scrolled?"12px 20px":"18px 20px"} !important}
-          nav a.clip-btn{display:none !important}
+          .nav-links-desktop { display:none !important; }
+          .hamburger-btn     { display:flex !important; }
+          .nav-book-btn      { display:none !important; }
+          nav { padding: 14px 20px !important; }
         }
       `}</style>
     </>
