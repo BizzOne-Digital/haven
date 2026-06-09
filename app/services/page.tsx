@@ -177,10 +177,12 @@ export default function ServicesPage() {
   return (
     <main style={{ background: "#080808", paddingTop: "100px" }}>
       {/* Hero */}
-      <section style={{ padding: "80px 60px 100px", position: "relative", overflow: "hidden", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(232,0,29,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(232,0,29,0.025) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
-        <div style={{ position: "absolute", right: "-10%", top: "50%", transform: "translateY(-50%)", width: "600px", height: "600px", background: "radial-gradient(circle,rgba(232,0,29,0.08) 0%,transparent 70%)", pointerEvents: "none" }} />
-        <div style={{ position: "relative", maxWidth: "1400px", margin: "0 auto" }}>
+      <section style={{ position: "relative", overflow: "hidden", borderBottom: "1px solid rgba(255,255,255,0.05)", minHeight: "420px", display: "flex", alignItems: "center" }}>
+  <div style={{ position: "absolute", inset: 0, backgroundImage: `url(https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&q=80)`, backgroundSize: "cover", backgroundPosition: "center" }} />
+  <div style={{ position: "absolute", inset: 0, background: "rgba(8,8,8,0.82)" }} />
+  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right,rgba(8,8,8,0.95) 40%,rgba(8,8,8,0.4) 100%)" }} />
+  <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: "linear-gradient(90deg,transparent,#e8001d 30%,#e8001d 70%,transparent)" }} />
+  <div style={{ position: "relative", maxWidth: "1400px", margin: "0 auto", padding: "80px 60px 100px", width: "100%" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontFamily: "'Orbitron',sans-serif", fontSize: "13px", letterSpacing: "6px", color: "#e8001d", textTransform: "uppercase", marginBottom: "20px" }}>
             <span style={{ width: "28px", height: "1px", background: "#e8001d", display: "block" }} />What We Do
           </span>
