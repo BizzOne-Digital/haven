@@ -20,6 +20,17 @@ const col3 = [
   { l: "Privacy Policy", h: "/contact" },
 ];
 
+const socialLinks = [
+  {
+    label: "IG",
+    url: "https://www.instagram.com/havencustoms.ca",
+  },
+  {
+    label: "FB",
+    url: "https://www.facebook.com/havencustomzz",
+  },
+];
+
 export default function Footer() {
   return (
     <footer
@@ -68,10 +79,12 @@ export default function Footer() {
           </p>
 
           <div style={{ display: "flex", gap: "10px" }}>
-            {["IG", "FB", "YT", "X"].map((s) => (
+            {socialLinks.map((social) => (
               <a
-                key={s}
-                href="#"
+                key={social.label}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 data-hover
                 style={{
                   width: "36px",
@@ -101,7 +114,7 @@ export default function Footer() {
                   e.currentTarget.style.background = "transparent";
                 }}
               >
-                {s}
+                {social.label}
               </a>
             ))}
           </div>
@@ -202,20 +215,20 @@ export default function Footer() {
           .footer-grid{
             grid-template-columns:1fr 1fr!important;
             gap:40px!important;
-            padding:50px 40px 40px!important
+            padding:50px 40px 40px!important;
           }
         }
 
         @media(max-width:600px){
           .footer-grid{
             grid-template-columns:1fr!important;
-            padding:40px 24px!important
+            padding:40px 24px!important;
           }
 
           .footer-bottom{
             padding:16px 24px!important;
             flex-direction:column!important;
-            text-align:center!important
+            text-align:center!important;
           }
         }
       `}</style>
