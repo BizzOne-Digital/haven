@@ -18,7 +18,7 @@ export default function BookingCTA() {
           Experiencing any car-related needs? Our team is always ready to guide you — from a quick consultation to a full vehicle transformation.
         </p>
         <a href="tel:+19058030000" style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(28px,4vw,48px)",color:"#e8001d",letterSpacing:"4px",display:"block",marginBottom:"36px",textDecoration:"none"}}>
-          +1 (905) 803-0000
+          +1 (416) 431-5255
         </a>
         <div style={{display:"flex",gap:"14px",flexWrap:"wrap",justifyContent:"center"}}>
           <Link href="/contact" style={{background:"#e8001d",color:"#fff",padding:"15px 38px",fontFamily:"'Rajdhani',sans-serif",fontSize:"13px",fontWeight:700,letterSpacing:"3px",textTransform:"uppercase",textDecoration:"none",display:"inline-block",transition:"all .3s",clipPath:"polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)"}}
