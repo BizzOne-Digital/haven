@@ -2,6 +2,7 @@
 
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { sendMetaLeadEvent } from "@/lib/metaConversionApi";
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -75,6 +76,12 @@ export async function POST(req: Request) {
           </div>
         </div>
       `,
+    });
+
+    await sendMetaLeadEvent({
+      email,
+      phone,
+      eventSourceUrl: "https://havencustoms.ca/contact",
     });
 
     return NextResponse.json({ success: true });
