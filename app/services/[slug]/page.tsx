@@ -357,38 +357,10 @@ const services: Record<string, {
       `${UNSPLASH}/photo-1549399542-7e3f8b79c341?w=600&q=80`,
     ],
   },
-  brakes: {
-    num: "13",
-    title: "Brake Services",
-    sub: "Reliable Stopping Power, Every Time",
-    hero: `${UNSPLASH}/photo-1486262715619-67b85e0b08d3?w=1400&q=80`,
-    img: `${UNSPLASH}/photo-1486262715619-67b85e0b08d3?w=800&q=80`,
-    desc: "Your vehicle's braking system is its most critical safety feature, and we ensure it performs flawlessly every time you hit the road.",
-    longDesc: "Our certified technicians provide comprehensive brake maintenance, including pad and rotor inspection, brake fluid checks, and caliper servicing. From minor repairs to complete brake replacement, we use high-quality parts to restore optimal stopping power and performance. We diagnose issues like squeaking, grinding, or reduced responsiveness before they become costly problems. Trust us to keep you and your passengers safe with reliable, expert brake care for all vehicle makes and models.",
-    features: [
-      "Pad and rotor inspection and replacement",
-      "Brake fluid checks and flushes",
-      "Caliper servicing and repair",
-      "Diagnosis of squeaking and grinding issues",
-      "High-quality OEM and aftermarket parts",
-      "All vehicle makes and models",
-    ],
-    process: [
-      { step: "Inspection", text: "Full brake system check — pads, rotors, calipers, lines, and fluid condition assessed." },
-      { step: "Diagnosis", text: "We identify the source of noise, vibration, or reduced stopping power before recommending work." },
-      { step: "Service or Replacement", text: "Pads, rotors, calipers, and fluid replaced or serviced using high-quality parts." },
-      { step: "Road Test", text: "Every vehicle road-tested after service to confirm smooth, responsive braking performance." },
-    ],
-    gallery: [
-      `${UNSPLASH}/photo-1486262715619-67b85e0b08d3?w=600&q=80`,
-      `${UNSPLASH}/photo-1619642751034-765dfdf7c58e?w=600&q=80`,
-      `${UNSPLASH}/photo-1580274455191-1c62238fa333?w=600&q=80`,
-    ],
-  },
 };
 
 /* ── All slugs for "Next / Prev" navigation ── */
-const slugOrder = ["ppf","ceramic-coating","dashcams","carplay","ambient-lights","wheel-lights","starlights","tires","tint","tail-lights","protection","custom","brakes"];
+const slugOrder = ["ppf","ceramic-coating","dashcams","carplay","ambient-lights","wheel-lights","starlights","tires","tint","tail-lights","protection","custom"];
 
 export default function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
