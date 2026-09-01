@@ -171,6 +171,20 @@ const services = [
       "Colour-change consultation included",
     ],
   },
+  {
+    num: "13",
+    title: "Brake Services",
+    sub: "Reliable Stopping Power, Every Time",
+    img: `${UNSPLASH}/photo-1486262715619-67b85e0b08d3?w=800&q=80`,
+    desc: "Your vehicle's braking system is its most critical safety feature, and we ensure it performs flawlessly every time you hit the road. Our certified technicians provide comprehensive brake maintenance, including pad and rotor inspection, brake fluid checks, and caliper servicing. From minor repairs to complete brake replacement, we use high-quality parts to restore optimal stopping power and performance. We diagnose issues like squeaking, grinding, or reduced responsiveness before they become costly problems. Trust us to keep you and your passengers safe with reliable, expert brake care for all vehicle makes and models.",
+    features: [
+      "Pad and rotor inspection and replacement",
+      "Brake fluid checks and flushes",
+      "Caliper servicing and repair",
+      "Diagnosis of squeaking and grinding issues",
+      "All vehicle makes and models",
+    ],
+  },
 ];
 
 export default function ServicesPage() {
